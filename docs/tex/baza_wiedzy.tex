@@ -25,6 +25,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     longitude & Float & Współrzędna geograficzna długości \\
     distance\_to\_center & Float & Odległość do centrum miasta w kilometrach \\
     total\_area & Float & Całkowita powierzchnia w metrach kwadratowych \\
+    standard & String & Standard wykończenia nieruchomości \\
     rooms & Integer & Liczba pokojów  \\
     bathrooms & Integer & Liczba łazienek \\
     year\_built & Integer & Rok budowy nieruchomości \\
@@ -143,13 +144,13 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \begin{enumerate}[label=\arabic*.]
         \item znajduje się na parterze lub budynek posiada windę,
         \item jest w dobrym stanie,
-        \item ma łatwy dostęp do transportu publicznego.
+        \item nie jest w centrum miasta.
     \end{enumerate}
     \item Mieszkanie jest \textbf{odpowiednie dla osób z niepełnosprawnościami}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item budynek posiada windę,
-        \item nie ma barier architektonicznych,
-        \item jest w dobrym stanie.
+        \item budynek posiada windę znajduje się na parterze,
+        \item jest w dobrym stanie,
+        \item jest nowe.
     \end{enumerate}
 \end{enumerate}
 
@@ -160,6 +161,8 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
         \item liczba pokoi jest większa niż 3,
         \item liczba łazienek jest większa niż 2,
         \item powierzchnia mieszkania jest większa niż 80 metrów kwadratowych,
+        \item typ nieruchomości to dom lub mieszkanie,
+        \item odlengłość do centrum miasta jest mniejsza niż 10 km,
         \item nieruchomość jest w dobrym stanie.
     \end{enumerate}
     \item Oferta sprzedaży jest \textbf{dobra dla singla}, jeśli:
@@ -172,22 +175,20 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \end{enumerate}
     \item Oferta sprzedaży jest \textbf{atrakcyjna inwestycyjnie}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item cena za metr kwadratowy jest niższa niż średnia rynkowa w danej lokalizacji,
+        \item cena za metr kwadratowy jest niższa niż 500 000 zł,
         \item nieruchomość jest w dobrym stanie lub wymaga jedynie drobnych remontów,
-        \item lokalizacja nieruchomości jest blisko centrum lub w rozwijającej się dzielnicy.
+        \item lokalizacja nieruchomości jest blisko centrum.
     \end{enumerate}
     \item Oferta sprzedaży jest \textbf{luksusowa}, jeśli:
     \begin{enumerate}[label=\arabic*.]
         \item powierzchnia mieszkania jest większa niż 150 metrów kwadratowych,
         \item nieruchomość posiada co najmniej 3 łazienki,
-        \item nieruchomość jest umeblowana i wykończona w wysokim standardzie,
-        \item nieruchomość posiada dodatkowe udogodnienia, takie jak basen, sauna, czy taras.
+        \item nieruchomość jest umeblowana,
+        \item nieruchomość jest wykończona w wysokim standardzie.
     \end{enumerate}
     \item Oferta sprzedaży jest \textbf{ekologiczna}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item nieruchomość posiada systemy oszczędzania energii, takie jak panele słoneczne,
-        \item ocena efektywności energetycznej jest wyższa niż A,
-        \item nieruchomość posiada systemy zbierania i wykorzystywania wody deszczowej.
+        \item ocena efektywności energetycznej jest wyższa niż A.
     \end{enumerate}
 \end{enumerate}
 
@@ -208,33 +209,32 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \end{enumerate}
     \item Oferta wynajmu jest \textbf{ekonomiczna}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item cena wynajmu jest niższa niż średnia rynkowa w danej lokalizacji,
-        \item nieruchomość jest w dobrym stanie,
-        \item lokalizacja nieruchomości zapewnia łatwy dostęp do transportu publicznego.
+        \item cena wynajmu jest niższa niż 2000 zł,
+        \item nieruchomość jest w dobrym stanie.
     \end{enumerate}
     \item Oferta wynajmu jest \textbf{luksusowa}, jeśli:
     \begin{enumerate}[label=\arabic*.]
         \item powierzchnia nieruchomości jest większa niż 150 metrów kwadratowych,
         \item nieruchomość posiada co najmniej 3 łazienki,
-        \item nieruchomość jest umeblowana i wykończona w wysokim standardzie,
-        \item nieruchomość posiada dodatkowe udogodnienia, takie jak basen, sauna, czy taras.
+        \item nieruchomość jest umeblowana
+        \item nieruchomość jest wykończona w wysokim standardzie,
+        \item cena wynajmu jest wyższa niż 5000 zł.
     \end{enumerate}
     \item Oferta wynajmu jest \textbf{przyjazna dla zwierząt}, jeśli:
     \begin{enumerate}[label=\arabic*.]
         \item polityka dotycząca zwierząt pozwala na ich posiadanie,
-        \item nieruchomość posiada ogrodzony teren lub przestrzeń dla zwierząt.
+        \item jest domem lub mieszkaniem na parterze.
     \end{enumerate}
     \item Oferta wynajmu jest \textbf{odpowiednia dla seniorów}, jeśli:
     \begin{enumerate}[label=\arabic*.]
         \item znajduje się na parterze lub budynek posiada windę,
         \item nieruchomość jest w dobrym stanie,
-        \item lokalizacja zapewnia łatwy dostęp do sklepów i usług medycznych.
+        \item nie jest w centrum miasta,
+        \item jest ekonomiczna.
     \end{enumerate}
     \item Oferta wynajmu jest \textbf{ekologiczna}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item nieruchomość posiada systemy oszczędzania energii, takie jak panele słoneczne,
-        \item ocena efektywności energetycznej jest wyższa niż A,
-        \item nieruchomość posiada systemy zbierania i wykorzystywania wody deszczowej.
+        \item ocena efektywności energetycznej jest wyższa niż A.
     \end{enumerate}
 \end{enumerate}
 
