@@ -1,3 +1,44 @@
 \section{Wnioskowanie przybliżone}
 
-%TODO: Hubert
+Wnioskowanie przybliżone to technika stosowana w systemach ekspertowych umożliwiająca podejmowanie decyzji w warunkach niepełnej, nieprecyzyjnej lub niepewnej informacji. W przeciwieństwie do klasycznego wnioskowania dedukcyjnego, które operuje na faktach jednoznacznych i ściśle zdefiniowanych regułach logicznych, wnioskowanie przybliżone pozwala na elastyczne interpretowanie danych wejściowych, co zbliża sposób działania systemu do ludzkiego rozumowania.
+
+W systemie ekspertowym wspierającym decyzje na rynku nieruchomości (kupno, sprzedaż, wynajem), mechanizmy wnioskowania przybliżonego są szczególnie przydatne w sytuacjach, gdy:
+\begin{itemize}
+    \item użytkownik nie potrafi precyzyjnie określić swoich preferencji (np. co oznacza „dobra lokalizacja” lub „przystępna cena”),
+    \item dane rynkowe są częściowo niekompletne, nieaktualne lub niejednoznaczne,
+    \item wymagane jest uwzględnienie subiektywnych ocen i preferencji w procesie rekomendacyjnym.
+\end{itemize}
+
+\subsection*{Przykłady zastosowania wnioskowania przybliżonego w regułach}
+
+W systemie zastosowano reguły o charakterze jakościowym i nieprecyzyjnym, w tym:
+\begin{itemize}
+    \item reguły oparte na wartościach progowych (np. „mieszkanie jest duże, jeśli ma więcej niż 80 m²”),
+    \item klasyfikacje lingwistyczne (np. „dobra lokalizacja”, „niska cena”, „nowe mieszkanie”),
+    \item predykaty symboliczne i warunki złożone (np. „oferta dobra dla rodziny”, „oferta luksusowa”).
+\end{itemize}
+
+Przykład zastosowania reguły przybliżonej:
+
+\begin{quote}
+Oferta sprzedaży jest atrakcyjna inwestycyjnie, jeśli cena za metr kwadratowy jest niższa niż 5000 zł, nieruchomość jest w dobrym stanie lub wymaga jedynie drobnych remontów, a lokalizacja jest blisko centrum.
+\end{quote}
+
+W powyższej regule uwzględniono:
+\begin{itemize}
+    \item nieostre pojęcie „blisko centrum” (odległość mniejsza niż 5 km),
+    \item względną ocenę „drobnych remontów” poprzez pośrednią interpretację stanu nieruchomości,
+    \item próg finansowy interpretowany kontekstowo w zależności od miasta i typu nieruchomości.
+\end{itemize}
+
+\subsection*{Reprezentacja nieostrych danych i pojęć lingwistycznych}
+
+Dane przechowywane w bazie wiedzy są przetwarzane za pomocą reguł zawierających rozmyte przedziały oraz symboliczne etykiety. Przykładowo:
+\begin{itemize}
+    \item „małe mieszkanie” – powierzchnia $<$ 40 m²,
+    \item „blisko centrum” – odległość $<$ 5 km,
+    \item „nowe mieszkanie” – rok budowy $>$ 2010,
+    \item „dobra lokalizacja” – pośrednia funkcja odległości do centrum, dostępności usług i typu zabudowy.
+\end{itemize}
+
+Użycie predykatów symbolicznych pozwala systemowi na formułowanie ocen zbliżonych do sposobu myślenia użytkowników, którzy nie posługują się wartościami liczbowymi, lecz pojęciami języka naturalnego.
