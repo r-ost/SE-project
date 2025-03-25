@@ -43,8 +43,8 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     description & String & Szczegółowy opis nieruchomości \\
     available\_from & DateTime & Data, od której nieruchomość jest dostępna \\
     last\_renovation\_date & DateTime & Data ostatniego remontu \\
-    created\_at & TimeStamp & Czasu utworzenia rekordu \\
-    updated\_at & TimeStamp & Czasu aktualizacji rekordu \\
+    created\_at & TimeStamp & Czas utworzenia rekordu \\
+    updated\_at & TimeStamp & Czas aktualizacji rekordu \\
     \hline
     \end{tabular}
     \label{tab:property_details}
@@ -115,9 +115,8 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \label{tab:sell_offer_details}
 \end{table}
 
-% \section{Fakty}
-
-\section{Reguły wnioskowania}
+\section{Reguły}
+% np. że jeśli nie ma parkingu, to nie może być typu parkingu 
 
 \subsection{Nieruchomość}
 \begin{enumerate}[label=N\arabic*.]
@@ -166,3 +165,5 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
         \item nieruchomość jest w dobrym stanie.
     \end{enumerate}
 \end{enumerate}
+
+
