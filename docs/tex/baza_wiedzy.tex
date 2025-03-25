@@ -15,6 +15,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \hline
     id & String & Unikalny identyfikator nieruchomości \\
     property\_type & String & Typ nieruchomości (mieszkanie, dom, działka, lokal użytkowy, biuro) \\
+    location\_type & String & Typ lokalizacji (miasto, wieś, przedmieścia) \\
     street\_address & String & Nazwa ulicy i numer \\
     city & String & Nazwa miasta \\
     state & String & Region administracyjny \\
@@ -22,6 +23,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     country & String & Nazwa kraju \\
     latitude & Float & Współrzędna geograficzna szerokości \\
     longitude & Float & Współrzędna geograficzna długości \\
+    distance\_to\_center & Float & Odległość do centrum miasta w kilometrach \\
     total\_area & Float & Całkowita powierzchnia w metrach kwadratowych \\
     rooms & Integer & Liczba pokojów  \\
     bathrooms & Integer & Liczba łazienek \\
@@ -113,9 +115,29 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \label{tab:sell_offer_details}
 \end{table}
 
-\section{Fakty}
+% \section{Fakty}
 
-\section{Definicje}
+\section{Reguły wnioskowania}
 
-\section{Relacje między rekordami}
+\subsection{Nieruchomość}
+\begin{itemize}
+    \item Mieszkanie jest \textbf{małe}, jeśli ma mniej niż 40 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{średnie}, jeśli ma od 40 do 80 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{duże}, jeśli ma więcej niż 80 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{blisko centrum}, jeśli odległość do centrum miasta jest mniejsza niż 5 km.
+    \item Mieszkanie jest \textbf{nowe}, jeśli zostało wybudowane po 2010 roku.
+    \item Mieszkanie jest \textbf{stare}, jeśli zostało wybudowane przed 1990 rokiem.
+    \item Mieszkanie jest \textbf{w dobrym stanie}, jeśli ocena stanu nieruchomości jest wyższa niż 3.
+    \item Mieszkanie jest \textbf{atrakcyjne}, jeśli jest duże, blisko centrum, nowe i w dobrym stanie.
+\end{itemize}
 
+\subsection{Oferta sprzedaży}
+\begin{itemize}
+    \item Oferta sprzedaży jest \textbf{dobra dla rodziny}, jeśli:
+    \begin{itemize}
+        \item liczba pokoi jest większa niż 3,
+        \item liczba łazienek jest większa niż 2,
+        \item powierzchnia mieszkania jest większa niż 80 metrów kwadratowych,
+        \item nieruchomość jest w dobrym stanie.
+    \end{itemize}
+\end{itemize}
