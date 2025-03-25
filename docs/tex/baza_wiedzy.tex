@@ -1,3 +1,52 @@
 \section{Baza wiedzy}
 
 % TODO: Michalina i Jan
+
+W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie danych systemu ekspertowego.
+
+\subsection{Nieruchomości}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator nieruchomości \\
+    property\_type & String & Typ nieruchomości (mieszkanie, dom, lokal użytkowy itp.) \\
+    street\_address & String & Nazwa ulicy i numer \\
+    city & String & Nazwa miasta \\
+    state & String & Region administracyjny \\
+    postal\_code & String & Kod pocztowy \\
+    country & String & Nazwa kraju \\
+    latitude & Float & Współrzędna geograficzna szerokości \\
+    longitude & Float & Współrzędna geograficzna długości \\
+    total\_area & Float & Całkowita powierzchnia w metrach kwadratowych \\
+    rooms & Integer & Liczba pokojów  \\
+    bathrooms & Integer & Liczba łazienek \\
+    year\_built & Integer & Rok budowy nieruchomości \\
+    construction\_type & String & Rodzaj materiału konstrukcyjnego \\
+    floors & Integer & Liczba pięter w budynku \\
+    floor\_number & Integer & Numer piętra dla mieszkań \\
+    has\_elevator & Boolean & Czy budynek posiada windę \\
+    has\_parking & Boolean & Czy dostępny jest parking \\
+    parking\_type & String & Rodzaj parkingu (garaż, ulica itp.) \\
+    pet\_policy & String & Opis polityki dotyczącej zwierząt \\
+    furnished & Boolean & Czy nieruchomość jest umeblowana \\
+    heating\_type & String & Rodzaj systemu ogrzewania \\
+    energy\_rating & String & Ocena efektywności energetycznej \\
+    flood\_risk & String & Ocena ryzyka powodziowego \\
+    property\_condition & String & Ogólna ocena stanu nieruchomości \\
+    description & String & Szczegółowy opis nieruchomości \\
+    available\_from & DateTime & Data, od której nieruchomość jest dostępna \\
+    last\_renovation\_date & DateTime & Data ostatniego remontu \\
+    created\_at & TimeStamp & Czasu utworzenia rekordu \\
+    updated\_at & TimeStamp & Czasu aktualizacji rekordu \\
+    \hline
+    \end{tabular}
+    \label{tab:property_details}
+\end{table}
+
+\subsection{Oferty sprzedaży}
+
+\subsection{Oferty wynajmu}
+
