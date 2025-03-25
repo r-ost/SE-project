@@ -12,7 +12,7 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
     \hline
     id & String & Unikalny identyfikator nieruchomości \\
-    property\_type & String & Typ nieruchomości (mieszkanie, dom, lokal użytkowy itp.) \\
+    property\_type & String & Typ nieruchomości (mieszkanie, dom, ziemia, lokal użytkowy itp.) \\
     street\_address & String & Nazwa ulicy i numer \\
     city & String & Nazwa miasta \\
     state & String & Region administracyjny \\
@@ -46,7 +46,50 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \label{tab:property_details}
 \end{table}
 
+\subsection{Pośrednicy nieruchomości}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator pośrednika sprzedaży \\
+    \hline
+    location & String & Lokalizacja (miasto) biura pośrednictwa \\
+    \hline
+    \end{tabular}
+    \label{tab:sell_offer_details}
+\end{table}
+
+
 \subsection{Oferty sprzedaży}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator oferty sprzedaży \\
+    \hline
+    property\_id & String & Unikalny identyfikator sprzedawanej nieruchomości \\
+    \hline
+    agent\_id & String & Unikalny identyfikator pośrednika sprzedaży \\
+    \hline
+    listing\_date & DateTime & Data wystawienia oferty \\
+    \hline
+    price & Float & Cena oferty \\
+    \hline
+    negotiable & Boolean & Czy cena jest do negocjacji \\
+    \hline
+    max\_price & Float & Maksymalna cena do negocjacji \\
+    \hline
+    min\_price & Float & Minimalna cena do negocjacji \\
+    \hline
+    \end{tabular}
+    \label{tab:sell_offer_details}
+\end{table}
 
 \subsection{Oferty wynajmu}
 
