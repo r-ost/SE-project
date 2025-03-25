@@ -124,16 +124,32 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \item Mieszkanie jest \textbf{średnie}, jeśli ma od 40 do 80 metrów kwadratowych powierzchni.
     \item Mieszkanie jest \textbf{duże}, jeśli ma więcej niż 80 metrów kwadratowych powierzchni.
     \item Mieszkanie jest \textbf{blisko centrum}, jeśli odległość do centrum miasta jest mniejsza niż 5 km.
+    \item Mieszkanie jest \textbf{daleko od centrum}, jeśli odległość do centrum miasta jest większa niż 15 km.
     \item Mieszkanie jest \textbf{nowe}, jeśli zostało wybudowane po 2010 roku.
     \item Mieszkanie jest \textbf{stare}, jeśli zostało wybudowane przed 1990 rokiem.
     \item Mieszkanie jest \textbf{w dobrym stanie}, jeśli ocena stanu nieruchomości jest wyższa niż 3.
+    \item Mieszkanie jest \textbf{w złym stanie}, jeśli ocena stanu nieruchomości jest mniejsza lub równa 3.
+    \item Mieszkanie jest \textbf{energooszczędne}, jeśli ocena efektywności energetycznej jest wyższa niż B.
     \item Mieszkanie jest \textbf{atrakcyjne}, jeśli:
     \begin{enumerate}[label=\arabic*.]
-        \item jest duże
+        \item jest duże,
         \item ma więcej niż 2 pokoje,
         \item ma więcej niż 2 łazienki,
-        \item jest blisko centrum 
-        \item jest w dobrym stanie
+        \item jest blisko centrum,
+        \item jest w dobrym stanie.
+    \end{enumerate}
+    \item Mieszkanie jest \textbf{przyjazne dla zwierząt}, jeśli polityka dotycząca zwierząt pozwala na ich posiadanie.
+    \item Mieszkanie jest \textbf{odpowiednie dla seniorów}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item znajduje się na parterze lub budynek posiada windę,
+        \item jest w dobrym stanie,
+        \item ma łatwy dostęp do transportu publicznego.
+    \end{enumerate}
+    \item Mieszkanie jest \textbf{odpowiednie dla osób z niepełnosprawnościami}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item budynek posiada windę,
+        \item nie ma barier architektonicznych,
+        \item jest w dobrym stanie.
     \end{enumerate}
 \end{enumerate}
 
@@ -151,8 +167,27 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
         \item liczba pokoi jest równa 1,
         \item liczba łazienek jest równa 1,
         \item powierzchnia mieszkania jest mniejsza niż 40 metrów kwadratowych,
-        \item nieruchomość jest w dobrym stanie.
+        \item nieruchomość jest w dobrym stanie,
         \item cena oferty jest niższa niż 500 000 zł.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{atrakcyjna inwestycyjnie}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item cena za metr kwadratowy jest niższa niż średnia rynkowa w danej lokalizacji,
+        \item nieruchomość jest w dobrym stanie lub wymaga jedynie drobnych remontów,
+        \item lokalizacja nieruchomości jest blisko centrum lub w rozwijającej się dzielnicy.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{luksusowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item powierzchnia mieszkania jest większa niż 150 metrów kwadratowych,
+        \item nieruchomość posiada co najmniej 3 łazienki,
+        \item nieruchomość jest umeblowana i wykończona w wysokim standardzie,
+        \item nieruchomość posiada dodatkowe udogodnienia, takie jak basen, sauna, czy taras.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{ekologiczna}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item nieruchomość posiada systemy oszczędzania energii, takie jak panele słoneczne,
+        \item ocena efektywności energetycznej jest wyższa niż A,
+        \item nieruchomość posiada systemy zbierania i wykorzystywania wody deszczowej.
     \end{enumerate}
 \end{enumerate}
 
@@ -163,6 +198,43 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
         \item liczba pokoi jest większa niż 2,
         \item liczba łazienek jest większa niż 1,
         \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{dobra dla rodzin}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item liczba pokoi jest większa niż 3,
+        \item liczba łazienek jest większa niż 2,
+        \item powierzchnia nieruchomości jest większa niż 80 metrów kwadratowych,
+        \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{ekonomiczna}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item cena wynajmu jest niższa niż średnia rynkowa w danej lokalizacji,
+        \item nieruchomość jest w dobrym stanie,
+        \item lokalizacja nieruchomości zapewnia łatwy dostęp do transportu publicznego.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{luksusowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item powierzchnia nieruchomości jest większa niż 150 metrów kwadratowych,
+        \item nieruchomość posiada co najmniej 3 łazienki,
+        \item nieruchomość jest umeblowana i wykończona w wysokim standardzie,
+        \item nieruchomość posiada dodatkowe udogodnienia, takie jak basen, sauna, czy taras.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{przyjazna dla zwierząt}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item polityka dotycząca zwierząt pozwala na ich posiadanie,
+        \item nieruchomość posiada ogrodzony teren lub przestrzeń dla zwierząt.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{odpowiednia dla seniorów}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item znajduje się na parterze lub budynek posiada windę,
+        \item nieruchomość jest w dobrym stanie,
+        \item lokalizacja zapewnia łatwy dostęp do sklepów i usług medycznych.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{ekologiczna}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item nieruchomość posiada systemy oszczędzania energii, takie jak panele słoneczne,
+        \item ocena efektywności energetycznej jest wyższa niż A,
+        \item nieruchomość posiada systemy zbierania i wykorzystywania wody deszczowej.
     \end{enumerate}
 \end{enumerate}
 
