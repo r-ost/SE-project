@@ -34,8 +34,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     floor\_number & Integer & Numer piętra dla mieszkań \\
     has\_elevator & Boolean & Czy budynek posiada windę \\
     has\_parking & Boolean & Czy dostępny jest parking \\
-    parking\_type & String & Rodzaj parkingu (garaż podziemny, ulica) \\ 
-    pet\_policy & String & Opis polityki dotyczącej zwierząt \\
+    parking\_type & String & Rodzaj parkingu (garaż podziemny, ulica) \\
     furnished & Boolean & Czy nieruchomość jest umeblowana \\
     heating\_type & String & Rodzaj systemu ogrzewania \\
     energy\_rating & String & Ocena efektywności energetycznej \\
@@ -100,17 +99,31 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \hline
     \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
     \hline
-    id & String & Unikalny identyfikator oferty sprzedaży \\
-    property\_id & String & Unikalny identyfikator sprzedawanej nieruchomości \\
+    id & String & Unikalny identyfikator oferty wynajmu \\
+    property\_id & String & Unikalny identyfikator wynajmowanej nieruchomości \\
     agent\_id & String & Unikalny identyfikator pośrednika sprzedaży \\
     status & String & Status oferty (aktywna, zakończona, wycofana) \\
-    price & Float & Cena oferty \\
+    price & Float & Cena wynajmu \\
+    additional\_cost & Float & Dodatkowe koszty \\
+    additional\_cost\_description & String & Opis dodatkowych kosztów \\
+    deposit & Float & Wymagana kaucja \\
     negotiable & Boolean & Czy cena jest do negocjacji \\    
     max\_price & Float & Maksymalna cena do negocjacji \\
     min\_price & Float & Minimalna cena do negocjacji \\
     listing\_date & DateTime & Data wystawienia oferty \\
     expiration\_date & DateTime & Data wygaśnięcia oferty \\
-    preffered\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
+    min\_start\_date & DateTime & Minimalna data rozpoczęcia wynajmu \\
+    max\_start\_date & DateTime & Maksymalna data rozpoczęcia wynajmu \\
+    min\_duration & Integer & Minimalny czas wynajmu w miesiącach \\
+    max\_duration & Integer & Maksymalny czas wynajmu w miesiącach \\
+    agreement\_type & String & Rodzaj umowy (najem okazjonalny, najem instytucjonalny) \\
+    rent\_type & String & Rodzaj wynajmu (całkowity, częściowy) \\
+    roommates & Integer & Liczba współlokatorów (obecnie mieszkających) \\
+    roommates\_description & String & Opis współlokatorów (obecnie mieszkających) \\
+    preferred\_tenant & String & Preferowany najemca (student, studentka, para, rodzina, bez dzieci, dowolny) \\
+    animals\_allowed & String & Czy dozwolone są zwierzęta (tak, nie, częściowo) \\
+    animals\_policy & String & Opis polityki dotyczącej zwierząt \\
+    additional\_description & String & Dodatkowy opis oferty \\
     \hline
     \end{tabular}
     \label{tab:sell_offer_details}
