@@ -124,6 +124,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     animals\_allowed & String & Czy dozwolone są zwierzęta (tak, nie, częściowo) \\
     animals\_policy & String & Opis polityki dotyczącej zwierząt \\
     additional\_description & String & Dodatkowy opis oferty \\
+    owner\_type & String & Typ właściciela (osoba prywatna, firma) \\
     \hline
     \end{tabular}
     \label{tab:sell_offer_details}
@@ -248,6 +249,18 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     \item Oferta wynajmu jest \textbf{ekologiczna}, jeśli:
     \begin{enumerate}[label=\arabic*.]
         \item ocena efektywności energetycznej jest wyższa niż A.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{krótkoterminowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item minimalny czas wynajmu wynosi mniej niż 6 miesięcy.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{długoterminowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item maksymalny czas wynajmu wynosi więcej niż 12 miesięcy.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{dostępna od zaraz}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item minimalna data rozpoczęcia wynajmu jest nie później niż za miesiąc.
     \end{enumerate}
 \end{enumerate}
 
