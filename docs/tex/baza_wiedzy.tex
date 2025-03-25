@@ -86,7 +86,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     min\_price & Float & Minimalna cena do negocjacji \\
     listing\_date & DateTime & Data wystawienia oferty \\
     expiration\_date & DateTime & Data wygaśnięcia oferty \\
-    preffered\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
+    preferred\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
     \hline
     \end{tabular}
     \label{tab:sell_offer_details}
@@ -127,7 +127,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
     owner\_type & String & Typ właściciela (osoba prywatna, firma) \\
     \hline
     \end{tabular}
-    \label{tab:sell_offer_details}
+    \label{tab:rent_offer_details}
 \end{table}
 
 \section{Reguły}
@@ -176,7 +176,7 @@ System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieru
         \item liczba łazienek jest większa niż 2,
         \item powierzchnia mieszkania jest większa niż 80 metrów kwadratowych,
         \item typ nieruchomości to dom lub mieszkanie,
-        \item odlengłość do centrum miasta jest mniejsza niż 10 km,
+        \item odległość do centrum miasta jest mniejsza niż 10 km,
         \item nieruchomość jest w dobrym stanie.
     \end{enumerate}
     \item Oferta sprzedaży jest \textbf{dobra dla singla}, jeśli:
