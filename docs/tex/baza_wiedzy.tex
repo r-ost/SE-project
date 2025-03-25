@@ -1,11 +1,13 @@
-\section{Baza wiedzy}
+\section{Baza wiedzy systemu ekspertowego}
 
 % TODO: Michalina i Jan
 
-W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie danych systemu ekspertowego.
+System ekspertowy będzie korzystał z bazy danych, przechowującej dane o nieruchomościach, pośrednikach nieruchomości, ofertach sprzedaży i wynajmu. Baza zostanie stworzona we współpracy z zespołem ekspertów dziedzinowych. Na podstawie danych z bazy i reguł system będzie w stanie generować rekomendacje dla użytkowników, odpowiadając na ich zapytania. W kolejnych sekcjach przedstawiono specyfikację rekordów, które będą przechowywane w bazie danych systemu ekspertowego.
 
-\subsection{Nieruchomości}
-\begin{table}[h]
+\subsection{Specyfikacja rekordów}
+
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{nieruchomość}}
     \centering
     \begin{tabular}{|l|l|l|}
     \hline
@@ -46,9 +48,8 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \label{tab:property_details}
 \end{table}
 
-\subsection{Pośrednicy nieruchomości}
-
-\begin{table}[h]
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{pośrednik nieruchomości}}
     \centering
     \begin{tabular}{|l|l|l|}
     \hline
@@ -66,9 +67,8 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \label{tab:agent_details}
 \end{table}
 
-\subsection{Oferty sprzedaży}
-
-\begin{table}[h]
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{oferta sprzedaży}}
     \centering
     \begin{tabular}{|l|l|l|}
     \hline
@@ -90,5 +90,32 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \label{tab:sell_offer_details}
 \end{table}
 
-\subsection{Oferty wynajmu}
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{oferta wynajmu}}
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator oferty sprzedaży \\
+    property\_id & String & Unikalny identyfikator sprzedawanej nieruchomości \\
+    agent\_id & String & Unikalny identyfikator pośrednika sprzedaży \\
+    status & String & Status oferty (aktywna, zakończona, wycofana) \\
+    price & Float & Cena oferty \\
+    negotiable & Boolean & Czy cena jest do negocjacji \\    
+    max\_price & Float & Maksymalna cena do negocjacji \\
+    min\_price & Float & Minimalna cena do negocjacji \\
+    listing\_date & DateTime & Data wystawienia oferty \\
+    expiration\_date & DateTime & Data wygaśnięcia oferty \\
+    preffered\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
+    \hline
+    \end{tabular}
+    \label{tab:sell_offer_details}
+\end{table}
+
+\section{Fakty}
+
+\section{Definicje}
+
+\section{Relacje między rekordami}
 
