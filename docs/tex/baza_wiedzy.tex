@@ -12,7 +12,7 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
     \hline
     id & String & Unikalny identyfikator nieruchomości \\
-    property\_type & String & Typ nieruchomości (mieszkanie, dom, ziemia, lokal użytkowy itp.) \\
+    property\_type & String & Typ nieruchomości (mieszkanie, dom, działka, lokal użytkowy, biuro) \\
     street\_address & String & Nazwa ulicy i numer \\
     city & String & Nazwa miasta \\
     state & String & Region administracyjny \\
@@ -29,7 +29,7 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     floor\_number & Integer & Numer piętra dla mieszkań \\
     has\_elevator & Boolean & Czy budynek posiada windę \\
     has\_parking & Boolean & Czy dostępny jest parking \\
-    parking\_type & String & Rodzaj parkingu (garaż, ulica itp.) \\
+    parking\_type & String & Rodzaj parkingu (garaż podziemny, ulica) \\ 
     pet\_policy & String & Opis polityki dotyczącej zwierząt \\
     furnished & Boolean & Czy nieruchomość jest umeblowana \\
     heating\_type & String & Rodzaj systemu ogrzewania \\
@@ -54,14 +54,17 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \hline
     \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
     \hline
-    id & String & Unikalny identyfikator pośrednika sprzedaży \\
-    \hline
+    id & String & Unikalny identyfikator pośrednika nieruchomości \\
     location & String & Lokalizacja (miasto) biura pośrednictwa \\
+    full\_name & String & Imię i nazwisko pośrednika \\
+    email & String & Adres e-mail pośrednika \\
+    phone & String & Numer telefonu pośrednika \\
+    license\_number & String & Numer licencji pośrednictwa \\
+    specialization & String & Specjalizacja pośrednika (mieszkania, domy, działki, lokale, biura) \\ 
     \hline
     \end{tabular}
-    \label{tab:sell_offer_details}
+    \label{tab:agent_details}
 \end{table}
-
 
 \subsection{Oferty sprzedaży}
 
@@ -72,20 +75,16 @@ W kolejnych sekcjach przedstawiono rekordy, które będą przechowywane w bazie 
     \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
     \hline
     id & String & Unikalny identyfikator oferty sprzedaży \\
-    \hline
     property\_id & String & Unikalny identyfikator sprzedawanej nieruchomości \\
-    \hline
     agent\_id & String & Unikalny identyfikator pośrednika sprzedaży \\
-    \hline
-    listing\_date & DateTime & Data wystawienia oferty \\
-    \hline
+    status & String & Status oferty (aktywna, zakończona, wycofana) \\
     price & Float & Cena oferty \\
-    \hline
-    negotiable & Boolean & Czy cena jest do negocjacji \\
-    \hline
+    negotiable & Boolean & Czy cena jest do negocjacji \\    
     max\_price & Float & Maksymalna cena do negocjacji \\
-    \hline
     min\_price & Float & Minimalna cena do negocjacji \\
+    listing\_date & DateTime & Data wystawienia oferty \\
+    expiration\_date & DateTime & Data wygaśnięcia oferty \\
+    preffered\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
     \hline
     \end{tabular}
     \label{tab:sell_offer_details}
