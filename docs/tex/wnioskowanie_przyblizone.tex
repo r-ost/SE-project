@@ -1,44 +1,45 @@
 \section{Wnioskowanie przybliżone}
 
-Wnioskowanie przybliżone to technika stosowana w systemach ekspertowych umożliwiająca podejmowanie decyzji w warunkach niepełnej, nieprecyzyjnej lub niepewnej informacji. W przeciwieństwie do klasycznego wnioskowania dedukcyjnego, które operuje na faktach jednoznacznych i ściśle zdefiniowanych regułach logicznych, wnioskowanie przybliżone pozwala na elastyczne interpretowanie danych wejściowych, co zbliża sposób działania systemu do ludzkiego rozumowania.
+Wnioskowanie przybliżone to technika stosowana w systemach ekspertowych, która umożliwia podejmowanie decyzji w warunkach \textbf{niepełnej, niepewnej lub probabilistycznej informacji}. W odróżnieniu od klasycznego wnioskowania dedukcyjnego, które bazuje na jednoznacznych faktach i ścisłych regułach logicznych, wnioskowanie przybliżone pozwala na ocenę prawdopodobieństwa wystąpienia danego zdarzenia na podstawie niepełnych danych.
 
 W systemie ekspertowym wspierającym decyzje na rynku nieruchomości (kupno, sprzedaż, wynajem), mechanizmy wnioskowania przybliżonego są szczególnie przydatne w sytuacjach, gdy:
 \begin{itemize}
-    \item użytkownik nie potrafi precyzyjnie określić swoich preferencji (np. co oznacza „dobra lokalizacja” lub „przystępna cena”),
-    \item dane rynkowe są częściowo niekompletne, nieaktualne lub niejednoznaczne,
-    \item wymagane jest uwzględnienie subiektywnych ocen i preferencji w procesie rekomendacyjnym.
+    \item użytkownik dysponuje \textbf{częściowymi danymi} (np. brak pełnej historii cen w danej lokalizacji),
+    \item dostępne informacje są \textbf{niepewne lub sprzeczne} (np. różne opinie ekspertów co do atrakcyjności lokalizacji),
+    \item istnieje potrzeba uwzględnienia \textbf{prawdopodobieństw i statystyk} w ocenie ryzyka inwestycyjnego.
 \end{itemize}
 
 \subsection*{Przykłady zastosowania wnioskowania przybliżonego w regułach}
 
-W systemie zastosowano reguły o charakterze jakościowym i nieprecyzyjnym, w tym:
+W systemie zastosowano reguły oparte na \textbf{ocenie prawdopodobieństwa} oraz metodach statystycznych, w tym:
 \begin{itemize}
-    \item reguły oparte na wartościach progowych (np. „mieszkanie jest duże, jeśli ma więcej niż 80 m²”),
-    \item klasyfikacje lingwistyczne (np. „dobra lokalizacja”, „niska cena”, „nowe mieszkanie”),
-    \item predykaty symboliczne i warunki złożone (np. „oferta dobra dla rodziny”, „oferta luksusowa”).
+    \item reguły probabilistyczne (np. „jeśli cena nieruchomości jest niższa o 20\% od średniej rynkowej, to istnieje 80\% prawdopodobieństwa, że oferta jest atrakcyjna”),
+    \item analizy statystyczne na podstawie danych historycznych (np. „prawdopodobieństwo wzrostu cen w danym regionie wynosi 65\%”),
+    \item estymacja ryzyka związanego z zakupem nieruchomości w oparciu o dane z rynku (np. „jeśli lokalizacja jest odległa od centrum o więcej niż 10 km, to prawdopodobieństwo utraty wartości wynosi 30\%”).
 \end{itemize}
 
-Przykład zastosowania reguły przybliżonej:
-
+\subsubsection*{Przykład zastosowania reguły przybliżonej:}
 \begin{quote}
-Oferta sprzedaży jest atrakcyjna inwestycyjnie, jeśli cena za metr kwadratowy jest niższa niż 5000 zł, nieruchomość jest w dobrym stanie lub wymaga jedynie drobnych remontów, a lokalizacja jest blisko centrum.
+Oferta sprzedaży jest uznawana za ryzykowną, jeśli prawdopodobieństwo spadku cen w danej lokalizacji przekracza 50\%, a stan nieruchomości jest oceniany jako niepewny na podstawie danych z inspekcji technicznej.
 \end{quote}
 
 W powyższej regule uwzględniono:
 \begin{itemize}
-    \item nieostre pojęcie „blisko centrum” (odległość mniejsza niż 5 km),
-    \item względną ocenę „drobnych remontów” poprzez pośrednią interpretację stanu nieruchomości,
-    \item próg finansowy interpretowany kontekstowo w zależności od miasta i typu nieruchomości.
+    \item \textbf{Prawdopodobieństwo spadku cen} obliczone na podstawie analiz rynkowych,
+    \item \textbf{Niepewność stanu technicznego} wynikającą z subiektywnych ocen inspektorów,
+    \item \textbf{Ryzyko inwestycyjne} jako kombinację obu czynników.
 \end{itemize}
 
-\subsection*{Reprezentacja nieostrych danych i pojęć lingwistycznych}
+\subsection*{Reprezentacja niepewności i danych probabilistycznych}
 
-Dane przechowywane w bazie wiedzy są przetwarzane za pomocą reguł zawierających rozmyte przedziały oraz symboliczne etykiety. Przykładowo:
+Dane w bazie wiedzy są przetwarzane za pomocą modeli probabilistycznych oraz metod estymacji prawdopodobieństwa. Przykładowo:
 \begin{itemize}
-    \item „małe mieszkanie” – powierzchnia $<$ 40 m²,
-    \item „blisko centrum” – odległość $<$ 5 km,
-    \item „nowe mieszkanie” – rok budowy $>$ 2010,
-    \item „dobra lokalizacja” – pośrednia funkcja odległości do centrum, dostępności usług i typu zabudowy.
+    \item „małe mieszkanie” - powierzchnia poniżej 40 m² z prawdopodobieństwem 70\% (na podstawie danych z rynku),
+    \item „blisko centrum” - odległość poniżej 5 km, przy czym prawdopodobieństwo spełnienia tej cechy w danym mieście wynosi 60\%,
+    \item „nowe mieszkanie” - rok budowy powyżej 2010, przy czym prawdopodobieństwo utrzymania stanu technicznego w dobrym stanie wynosi 85\%,
+    \item „dobra lokalizacja” - wynik analizy danych o dostępności usług i komunikacji, estymowany z dokładnością 75\%.
 \end{itemize}
 
-Użycie predykatów symbolicznych pozwala systemowi na formułowanie ocen zbliżonych do sposobu myślenia użytkowników, którzy nie posługują się wartościami liczbowymi, lecz pojęciami języka naturalnego.
+Wykorzystanie metod probabilistycznych w ocenie ofert nieruchomości pozwala na modelowanie ryzyka}\ i podejmowanie decyzji w warunkach niepewności, co odpowiada rzeczywistym wyzwaniom rynku nieruchomości.
+
+\end{document}
