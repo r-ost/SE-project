@@ -1,4 +1,6 @@
 \section{Wnioskowanie}
+Wnioskowanie będzie odbywać się w oparciu o odpowiedzi użytkownika na pytania systemu o preferencje dotyczące nieruchomości. Na podstawie tych odpowiedzi system będzie wnioskował, które oferty są dla użytkownika najlepsze. W poniższych przykładach przedstawiono dialog systemu z użytkownikiem oraz wnioski wyciągnięte na podstawie odpowiedzi. W docelowym rozwiązaniu wyjściem systemu będzie lista nieruchomości, które najlepiej spełniają preferencje użytkownika.
+\\ \\
 \noindent \textbf{Ekspertyza: Dobór odpowiedniej nieruchomości}\\
 \noindent Czy szukasz nieruchomości na sprzedaż, która będzie odpowiednia dla Ciebie? (T/N) \textbf{T} \\
 \noindent Czy preferujesz mieszkanie, które będzie gotowe do zamieszkania? (T/N) \textbf{T} \\
@@ -79,14 +81,14 @@ MOIM ZDANIEM: Powinieneś rozważyć wynajem długoterminowy nieruchomości w do
 
 \section{Interfejs użytkownika}
 Interfejs graficzny systemu eksperckiego dotyczącego nieruchomości został wstępnie zaprojektowany przy użyciu bibliotek \texttt{Tkinter} oraz \texttt{CustomTkinter} w języku Python. Aplikacja działa na zasadzie konwersacji z użytkownikiem, w której system zadaje pytania typu Tak/Nie, a użytkownik odpowiada klikając odpowiedni przycisk.
-
+\\ \\
 Okno aplikacji składa się z dwóch głównych części:
 \begin{itemize}
     \item \textbf{Panel czatu} -- scrollowalne pole, w którym pojawiają się dymki z pytaniami systemu oraz odpowiedziami użytkownika. Wiadomości systemowe są wyrównane do lewej i wyświetlane w jasnoszarych dymkach, natomiast odpowiedzi użytkownika są wyrównane do prawej i przedstawione w niebieskich dymkach.
     \item \textbf{Panel odpowiedzi} -- znajdujący się na dole interfejsu, zawiera dwa przyciski: \texttt{Tak} oraz \texttt{Nie}. Po kliknięciu jednego z nich odpowiedź użytkownika jest rejestrowana i wyświetlana w czacie, a system automatycznie przechodzi do kolejnego pytania.
 \end{itemize}
 
-Taki sposób komunikacji imituje naturalny dialog i zwiększa czytelność oraz przyjazność obsługi systemu dla użytkownika. Interfejs jest gotowy do rozbudowy o logikę wnioskowania oraz dodatkowe funkcjonalności.
+\noindent Taki sposób komunikacji imituje naturalny dialog i zwiększa czytelność oraz przyjazność obsługi systemu dla użytkownika. Interfejs jest gotowy do rozbudowy o logikę wnioskowania oraz dodatkowe funkcjonalności.
 \begin{figure}[H]
     \centering
     \includegraphics[width=.9\linewidth]{tex/fig/ui.png}
