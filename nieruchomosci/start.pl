@@ -9,6 +9,8 @@
 
 % -------------------------------
 % jak odpalić
+% cd nieruchomosci
+% swipl
 % ?- [start].
 % ?- start. 
 
