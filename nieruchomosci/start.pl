@@ -1,18 +1,30 @@
-:- set_prolog_flag(encoding, utf8).
-:- encoding(utf8).
-:- consult('wnioskowanie.pl').
+:- set_prolog_flag(encoding, utf8). %polskie znaki
+:- encoding(utf8). %polskie znaki
+:- consult('wnioskowanie.pl'). % Wczytanie pliku z regułami
 :- consult('baza_wiedzy.pl').
 :- consult('rozmyte.pl').
+:- consult('pomocnicze.pl'). 
 
 
-% Czyta pojedynczy znak i ignoruje znak nowej linii
-read_char(Char) :-
-    get_char(Char),
-    get_char(_).  % odczytuje znak nowej linii i ignoruje go
+
+% -------------------------------
+% jak odpalić
+% ?- [start].
+% ?- start. 
 
 
-start :-
-    
+% jak coś zmieniacie musicie na nowo załadować plik
+
+%jak tworzycie nowe zapytania to odp wczytujcie poprzez read_char
+% bo do read potrzebna jest kropka (trzeba podawac t./n. a nie t/n)
+% -------------------------------
+
+
+
+
+
+
+start :-    
     write('Czy szukasz mieszkania atrakcyjnego? (t/n)'), nl,
     read_char(Odp),
     write('Wczytano odpowiedź: '), write(Odp), nl,
@@ -22,6 +34,7 @@ start :-
     ;   
         write('Pominięto pytanie.'), nl
     ),
+
     nl,
     write('Czy szukasz mieszkania dla rodziny? (t/n)'), nl,
     read_char(Odp2),
@@ -30,6 +43,7 @@ start :-
         wypisz_wyniki(Lista2)
     ;   write('Pominięto pytanie.'), nl
     ),
+
     nl,
     write('Czy chcesz zobaczyć nieruchomości z wysoką atrakcyjnością rozmytą? (t/n)'), nl,
     read_char(Odp3),
@@ -42,15 +56,3 @@ start :-
         wypisz_rozmyte(Lista3)
     ;   write('Pominięto pytanie.'), nl
     ).
-
-wypisz_wyniki([]) :-
-    write('Nie znaleziono więcej pasujących nieruchomości.'), nl.
-wypisz_wyniki([H|T]) :-
-    write('Znaleziono: '), write(H), nl,
-    wypisz_wyniki(T).
-
-wypisz_rozmyte([]) :-
-    write('Brak więcej pasujących nieruchomości.'), nl.
-wypisz_rozmyte([ID-Ocena | T]) :-
-    format('Znaleziono: ~w (atrakcyjność: ~2f)~n', [ID, Ocena]),
-    wypisz_rozmyte(T).
