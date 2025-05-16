@@ -1,15 +1,23 @@
-% -------------------------------
-% Fakty o nieruchomościach
-% -------------------------------
+% Nieruchomość: nieruchomosc(ID, Typ, Lokalizacja, Ulica, Miasto, Region, KodPocztowy, Kraj,
+% Lat, Long, Odleglosc, Powierzchnia, Standard, Pokoje, Lazienki, Rok, Konstrukcja, Pietra, NrPietra,
+% Winda, Parking, TypParking, Umeblowane, Ogrzewanie, Energia, Powodz, Stan, Opis, Dostepnosc, OstatniRemont, Utworzono, Zaktualizowano)
 
-% nieruchomosc(ID, Typ, Lokalizacja, Powierzchnia, Pokoje, Lazienki, RokBudowy, Stan, Odleglosc, Umeblowane, Energia, Zwierzeta).
+nieruchomosc(n1, mieszkanie, miasto, 'Ul. Kwiatowa 1', warszawa, mazowieckie, '00-001', polska,
+52.2297, 21.0122, 2.5, 85, wysoki, 4, 2, 2018, cegla, 4, 3, tak, tak, garaz, tak, gazowe, a, niskie, 5, 'Opis n1', 2024-06-01, 2022-01-01, 2022-06-01).
 
-nieruchomosc(n1, mieszkanie, miasto, 35, 1, 1, 2012, 4, 3.0, tak, b, tak).
-nieruchomosc(n2, mieszkanie, przedmiescia, 85, 4, 2, 1995, 5, 7.0, nie, a, nie).
-nieruchomosc(n3, dom, wies, 150, 5, 3, 2018, 5, 20.0, tak, a, tak).
-nieruchomosc(n4, mieszkanie, miasto, 60, 2, 1, 1985, 3, 2.5, nie, c, nie).
-nieruchomosc(n5, mieszkanie, miasto, 90, 3, 2, 2020, 5, 1.0, tak, a, tak).
-nieruchomosc(n6, mieszkanie, przedmiescia, 100, 6, 4, 2015, 4, 1.0, tak, b, nie).
+% Pośrednik: posrednik(ID, Lokalizacja, ImieNazwisko, Email, Telefon, Licencja, Specjalizacja)
+posrednik(p1, warszawa, 'Anna Kowalska', 'anna@example.com', '123456789', 'L12345', mieszkania).
+
+% Oferta sprzedaży: oferta_sprzedazy(ID, PropertyID, AgentID, Status, Cena, Negocjacja, CenaMax, CenaMin, DataWystawienia, DataWygasniecia, Platnosc)
+oferta_sprzedazy(o1, n1, p1, aktywna, 480000, tak, 500000, 450000, 2025-04-01, 2025-08-01, gotowka).
+
+% Oferta wynajmu: oferta_wynajmu(ID, PropertyID, AgentID, Status, Cena, KosztyDodatkowe, OpisKosztow, Kaucja,
+% Negocjacja, MaxCena, MinCena, Wystawienie, Wygasniecie, MinStart, MaxStart, MinOkres, MaxOkres,
+% Umowa, TypNajmu, Lokatorzy, OpisLokatorow, PreferowanyNajemca, Zwierzeta, PolitykaZwierzat, Opis, TypWlasciciela)
+
+oferta_wynajmu(w1, n1, p1, aktywna, 1800, 300, 'media', 2000, tak, 2000, 1500, 2025-04-01, 2025-07-01,
+2025-06-01, 2025-06-15, 3, 12, 'najem okazjonalny', calkowity, 0, 'brak', student, tak, 'możliwe małe zwierzęta', 'opis oferty', osoba_prywatna).
+
 
 % -------------------------------
 % Reguły ogólne

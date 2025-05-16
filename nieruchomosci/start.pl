@@ -15,7 +15,7 @@
 % ?- start. 
 
 
-% jak coś zmieniacie musicie na nowo załadować plik
+% jak coś zmieniacie musicie na nowo załadować plik (obie linijki)
 
 %jak tworzycie nowe zapytania to odp wczytujcie poprzez read_char
 % bo do read potrzebna jest kropka (trzeba podawac t./n. a nie t/n)
