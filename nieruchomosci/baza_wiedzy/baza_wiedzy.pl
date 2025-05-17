@@ -48,9 +48,30 @@
     platnosc
 ).
 
-% Oferta wynajmu: oferta_wynajmu(ID, PropertyID, AgentID, Status, Cena, KosztyDodatkowe, OpisKosztow, Kaucja,
-% Negocjacja, MaxCena, MinCena, Wystawienie, Wygasniecie, MinStart, MaxStart, MinOkres, MaxOkres,
-% Umowa, TypNajmu, Lokatorzy, OpisLokatorow, PreferowanyNajemca, Zwierzeta, PolitykaZwierzat, Opis, TypWlasciciela)
-
-oferta_wynajmu(w1, n1, p1, aktywna, 1800, 300, 'media', 2000, tak, 2000, 1500, 2025-04-01, 2025-07-01,
-2025-06-01, 2025-06-15, 3, 12, 'najem okazjonalny', calkowity, 0, 'brak', student, tak, 'możliwe małe zwierzęta', 'opis oferty', osoba_prywatna).
+:- record oferta_wynajmu(
+    id,
+    property_id,
+    status,
+    cena,
+    koszty_dodatkowe,
+    opis_kosztow,
+    kaucja,
+    negocjacja,
+    cena_max,
+    cena_min,
+    data_wystawienia,
+    data_wygasniecia,
+    min_start,
+    max_start,
+    min_okres,
+    max_okres,
+    umowa,
+    typ_najmu,
+    lokatorzy,
+    opis_lokatorow,
+    preferowany_najemca,
+    zwierzeta,
+    polityka_zwierzat,
+    opis,
+    typ_wlasciciela
+).
