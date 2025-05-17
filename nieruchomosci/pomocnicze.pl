@@ -15,3 +15,11 @@ wypisz_rozmyte([]) :-
 wypisz_rozmyte([ID-Ocena | T]) :-
     format('Znaleziono: ~w (atrakcyjność: ~2f)~n', [ID, Ocena]),
     wypisz_rozmyte(T).
+
+czytaj_odpowiedz(Odp) :-
+    read_line_to_string(user_input, Str),
+    string_lower(Str, Lower),
+    ( member(Lower, ["t", "tak", "y"]) -> Odp = t
+    ; member(Lower, ["n", "nie"])     -> Odp = n
+    ; write('Niepoprawna odpowiedź. Wpisz t lub n.'), nl, czytaj_odpowiedz(Odp)
+    ).
