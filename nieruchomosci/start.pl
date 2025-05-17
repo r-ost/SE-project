@@ -1,7 +1,8 @@
 :- set_prolog_flag(encoding, utf8). %polskie znaki
 :- encoding(utf8). %polskie znaki
-:- consult('wnioskowanie.pl'). % Wczytanie pliku z regułami
-% :- consult('baza_wiedzy.pl').
+:- consult('reguly/reguly_nieruchomosci.pl'). % Wczytanie pliku z regułami
+:- consult('reguly/reguly_sprzedaz.pl'). % Wczytanie pliku z regułami
+:- consult('reguly/reguly_wynajem.pl'). % Wczytanie pliku z regułami
 :- consult('rozmyte.pl').
 :- consult('pomocnicze.pl'). 
 

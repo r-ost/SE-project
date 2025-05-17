@@ -31,11 +31,11 @@ przynaleznosc_dobry_stan(Stan, W) :-
     ; W is 0.0 ).
 
 % Ocena atrakcyjności rozmytej
-atrakcyjnosc(ID, Ocena) :-
-    nieruchomosc(ID, mieszkanie, _, Pow, Pokoje, Lazienki, _, Stan, Odl, _, _, _),
-    przynaleznosc_duze(Pow, W1),
-    przynaleznosc_blisko_centrum(Odl, W2),
-    przynaleznosc_dobry_stan(Stan, W3),
-    (Pokoje > 2 -> W4 = 1.0 ; W4 = 0.0),
-    (Lazienki > 2 -> W5 = 1.0 ; W5 = 0.0),
-    Ocena is (W1 + W2 + W3 + W4 + W5) / 5.
+% atrakcyjnosc(ID, Ocena) :-
+%     nieruchomosc(ID, mieszkanie, _, Pow, Pokoje, Lazienki, _, Stan, Odl, _, _, _),
+%     przynaleznosc_duze(Pow, W1),
+%     przynaleznosc_blisko_centrum(Odl, W2),
+%     przynaleznosc_dobry_stan(Stan, W3),
+%     (Pokoje > 2 -> W4 = 1.0 ; W4 = 0.0),
+%     (Lazienki > 2 -> W5 = 1.0 ; W5 = 0.0),  
+%     Ocena is (W1 + W2 + W3 + W4 + W5) / 5.
