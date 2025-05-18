@@ -1,0 +1,9 @@
+ID,PropertyID,Status,Cena,Negocjacja,CenaMax,CenaMin,DataWystawienia,DataWygasniecia,Platnosc
+o1,n1,aktywna,480000,tak,500000,450000,2025-04-01,2025-08-01,gotowka
+o2,n2,aktywna,620000,tak,650000,600000,2025-05-10,2025-09-10,przelew
+o3,n3,nieaktywna,315000,nie,315000,315000,2025-01-15,2025-04-15,gotowka
+o4,n4,aktywna,890000,tak,920000,860000,2025-03-20,2025-07-20,kredyt
+o5,n5,aktywna,755000,nie,755000,755000,2025-02-01,2025-06-01,gotowka
+o6,n6,nieaktywna,270000,tak,290000,250000,2024-11-05,2025-03-05,przelew
+o7,n7,aktywna,1200000,tak,1250000,1150000,2025-04-25,2025-08-25,kredyt
+o8,n8,aktywna,510000,nie,510000,510000,2025-05-01,2025-09-01,gotowka
