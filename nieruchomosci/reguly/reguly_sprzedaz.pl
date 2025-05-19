@@ -1,8 +1,5 @@
 % --- Reguły S: sprzedaż ---
-sprzedaz_oferta_rodzinna(OfertaSprzedazy, Nieruchomosci) :-
-    oferta_sprzedazy_property_id(OfertaSprzedazy, PropertyId),
-    member(Nieruchomosc, Nieruchomosci),
-    nieruchomosc_id(Nieruchomosc, PropertyId),
+sprzedaz_oferta_rodzinna(_OfertaSprzedazy, Nieruchomosc) :-
     nieruchomosc_typ(Nieruchomosc, Typ),
     nieruchomosc_pokoje(Nieruchomosc, Pokoje),
     nieruchomosc_lazienki(Nieruchomosc, Lazienki),
@@ -16,10 +13,7 @@ sprzedaz_oferta_rodzinna(OfertaSprzedazy, Nieruchomosci) :-
     Odleglosc < 10,
     Stan > 3.
 
-sprzedaz_oferta_singlowa(OfertaSprzedazy, Nieruchomosci) :-
-    oferta_sprzedazy_property_id(OfertaSprzedazy, PropertyId),
-    member(Nieruchomosc, Nieruchomosci),
-    nieruchomosc_id(Nieruchomosc, PropertyId),
+sprzedaz_oferta_singlowa(_OfertaSprzedazy, Nieruchomosc) :-
     nieruchomosc_typ(Nieruchomosc, Typ),
     nieruchomosc_pokoje(Nieruchomosc, Pokoje),
     nieruchomosc_lazienki(Nieruchomosc, Lazienki),
@@ -33,31 +27,18 @@ sprzedaz_oferta_singlowa(OfertaSprzedazy, Nieruchomosci) :-
     Odleglosc < 10,
     Stan > 3.
 
-sprzedaz_oferta_inwestycyjna(OID) :-
-    oferta_sprzedazy(OID, PID, _, _, Cena, _, _, _, _, _, _),
-    nieruchomosc(PID, _, _, _, _, _, _, _, _, _, Odl, Pow, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, Stan, _, _, _),
-    CenaZaM2 is Cena / Pow,
-    CenaZaM2 < 5000,
-    (Stan > 3 ; Stan =< 3),
-    Odl < 5.
-
-sprzedaz_oferta_inwestycyjna(OfertaSprzedazy, Nieruchomosci) :-
-    oferta_sprzedazy_property_id(OfertaSprzedazy, PropertyId),
+sprzedaz_oferta_inwestycyjna(OfertaSprzedazy, Nieruchomosc) :-
     oferta_sprzedazy_cena(OfertaSprzedazy, Cena),
-    member(Nieruchomosc, Nieruchomosci),
-    nieruchomosc_id(Nieruchomosc, PropertyId),
     nieruchomosc_powierzchnia(Nieruchomosc, Pow),
+    number(Pow), Pow > 0,
     nieruchomosc_odleglosc(Nieruchomosc, Odl),
     nieruchomosc_stan(Nieruchomosc, Stan),
     CenaZaM2 is Cena / Pow,
     CenaZaM2 < 5000,
-    (Stan > 3 ; Stan =< 3),
+    Stan =< 3,
     Odl < 5.
 
-sprzedaz_oferta_luksusowa(OfertaSprzedazy, Nieruchomosci) :-
-    oferta_sprzedazy_property_id(OfertaSprzedazy, PropertyId),
-    member(Nieruchomosc, Nieruchomosci),
-    nieruchomosc_id(Nieruchomosc, PropertyId),
+sprzedaz_oferta_luksusowa(_OfertaSprzedazy, Nieruchomosc) :-
     nieruchomosc_powierzchnia(Nieruchomosc, Pow),
     nieruchomosc_standard(Nieruchomosc, Standard),
     nieruchomosc_lazienki(Nieruchomosc, Lazienki),
@@ -67,9 +48,6 @@ sprzedaz_oferta_luksusowa(OfertaSprzedazy, Nieruchomosci) :-
     Standard = wysoki,
     Umeblowane = tak.
 
-sprzedaz_oferta_ekologiczna(OfertaSprzedazy, Nieruchomosci) :-
-    oferta_sprzedazy_property_id(OfertaSprzedazy, PropertyId),
-    member(Nieruchomosc, Nieruchomosci),
-    nieruchomosc_id(Nieruchomosc, PropertyId),
+sprzedaz_oferta_ekologiczna(_OfertaSprzedazy, Nieruchomosc) :-
     nieruchomosc_energia(Nieruchomosc, Energia),
     member(Energia, ['a','a+', 'a++', 'a+++']).
