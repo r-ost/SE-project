@@ -1,6 +1,7 @@
 :- use_module(library(record)).
 
 :- set_prolog_flag(encoding, utf8).
+:- set_prolog_flag(stack_limit, 1000000000).
 :- encoding(utf8).
 
 % Załaduj wszystkie niezbędne pliki z regułami i bazą wiedzy
