@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QScrollArea
 )
@@ -167,7 +168,8 @@ class ChatWindow(QWidget):
         prolog_answers = ['t' if a == 'Tak' else 'n' for a in self.answers[1:]]
         prolog = Prolog()
 
-        prolog.consult("nieruchomosci/start.pl")
+        prolog.consult(os.path.join("nieruchomosci", "start.pl"))
+        csvPath = os.path.join("nieruchomosci", "baza_wiedzy", "csv")
 
         if self.answers[0] == _rent_label:
             filters = f"""filtry{{
@@ -184,8 +186,8 @@ class ChatWindow(QWidget):
                 dostepne_od_zaraz: {prolog_answers[10]}
             }}"""
             query = (
-                f"read_nieruchomosci_from_csv('nieruchomosci/baza_wiedzy/csv/nieruchomosci.csv', Nieruchomosci),"
-                f"read_oferty_wynajmu_from_csv('nieruchomosci/baza_wiedzy/csv/oferty_wynajmu.csv', OfertyWynajmu),"
+                f"read_nieruchomosci_from_csv('{os.path.join(csvPath, 'nieruchomosci.csv')}', Nieruchomosci),"
+                f"read_oferty_wynajmu_from_csv('{os.path.join(csvPath, 'oferty_wynajmu.csv')}', OfertyWynajmu),"
                 f"filtruj_i_wypisz_wynajem({filters}, Nieruchomosci, OfertyWynajmu, PasujaceNieruchomosci)"
             )
         else:
@@ -197,8 +199,8 @@ class ChatWindow(QWidget):
                 umeblowane: {prolog_answers[4]}
             }}"""
             query = (
-                "read_nieruchomosci_from_csv('nieruchomosci/baza_wiedzy/csv/nieruchomosci.csv', Nieruchomosci),"
-                "read_oferty_sprzedazy_from_csv('nieruchomosci/baza_wiedzy/csv/oferty_sprzedazy.csv', OfertySprzedazy),"
+                f"read_nieruchomosci_from_csv('{os.path.join(csvPath, 'nieruchomosci.csv')}', Nieruchomosci),"
+                f"read_oferty_sprzedazy_from_csv('{os.path.join(csvPath, 'oferty_sprzedazy.csv')}', OfertySprzedazy),"
                 f"filtruj_i_wypisz_sprzedaz({filters}, Nieruchomosci, OfertySprzedazy, PasujaceNieruchomosci)"
             )
 
