@@ -8,6 +8,7 @@
 :- consult('reguly/reguly_nieruchomosci.pl').
 :- consult('reguly/reguly_sprzedaz.pl').
 :- consult('reguly/reguly_wynajem.pl').
+:- consult('reguly/reguly_minimalne.pl').
 :- consult('rozmyte.pl').
 :- consult('pomocnicze.pl'). 
 :- consult('baza_wiedzy/nieruchomosc.pl').
