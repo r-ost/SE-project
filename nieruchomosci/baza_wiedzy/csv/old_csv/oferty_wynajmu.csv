@@ -1,0 +1,6 @@
+ID,PropertyID,Status,Cena,KosztyDodatkowe,OpisKosztow,Kaucja,Negocjacja,MaxCena,MinCena,Wystawienie,Wygasniecie,MinStart,MaxStart,MinOkres,MaxOkres,Umowa,TypNajmu,Lokatorzy,OpisLokatorow,PreferowanyNajemca,Zwierzeta,PolitykaZwierzat,Opis,TypWlasciciela
+w1,n1,aktywna,1800,300,media,2000,tak,2000,1500,2025-04-01,2025-07-01,2025-06-01,2025-06-15,3,12,"najem okazjonalny",calkowity,0,brak,student,tak,"możliwe małe zwierzęta","opis oferty",osoba_prywatna
+w2,n18,aktywna,1700,200,media,1800,nie,1800,1600,2025-05-20,2025-09-20,2025-06-10,2025-06-20,3,12,"najem okazjonalny",calkowity,2,studenci,student,tak,"możliwe małe zwierzęta","blisko uczelni",osoba_prywatna
+w3,n19,aktywna,1500,100,media,1600,nie,1600,1400,2025-06-01,2025-10-01,2025-06-15,2025-07-01,6,24,"najem okazjonalny",calkowity,1,senior,senior,nie,"brak zwierząt","parter, dostępne dla seniora",osoba_prywatna
+w4,n15,aktywna,4500,500,media,5000,tak,5000,4000,2025-06-01,2025-10-01,2025-06-10,2025-06-20,12,36,"najem okazjonalny",calkowity,5,rodzina,rodzina,tak,"możliwe zwierzęta","duże rodzinne mieszkanie",osoba_prywatna
+w5,n21,aktywna,1800,150,media,2000,nie,2000,1700,2025-06-15,2025-10-15,2025-07-01,2025-07-10,6,24,"najem okazjonalny",calkowity,1,senior,senior,tak,"możliwe małe zwierzęta","parter, winda, spokojna okolica",osoba_prywatna

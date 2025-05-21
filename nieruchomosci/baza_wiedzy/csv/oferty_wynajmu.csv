@@ -1,2 +1,101 @@
 ID,PropertyID,Status,Cena,KosztyDodatkowe,OpisKosztow,Kaucja,Negocjacja,MaxCena,MinCena,Wystawienie,Wygasniecie,MinStart,MaxStart,MinOkres,MaxOkres,Umowa,TypNajmu,Lokatorzy,OpisLokatorow,PreferowanyNajemca,Zwierzeta,PolitykaZwierzat,Opis,TypWlasciciela
-w1,n1,aktywna,1800,300,media,2000,tak,2000,1500,2025-04-01,2025-07-01,2025-06-01,2025-06-15,3,12,"najem okazjonalny",calkowity,0,brak,student,tak,"możliwe małe zwierzęta","opis oferty",osoba_prywatna
+w1,n101,aktywna,2238,651,media,1914,tak,2418,1794,2025-09-01,2025-12-01,2025-09-01,2025-12-01,6,18,zwykly,pokoj,2,studenci,student,nie,brak zwierząt,luksusowe,firma
+w2,n102,aktywna,6090,499,media,2546,tak,6402,5617,2025-09-01,2025-11-01,2025-04-01,2025-12-01,3,27,najem okazjonalny,calkowity,4,brak,singiel,tak,możliwe zwierzęta,wysoki standard,firma
+w3,n103,aktywna,3135,754,media,4408,tak,3411,3018,2025-02-01,2025-12-01,2025-01-01,2025-11-01,3,15,najem okazjonalny,calkowity,1,rodzina,senior,tak,możliwe zwierzęta,"parter, winda",firma
+w4,n104,aktywna,6011,442,media,4329,nie,6150,5603,2025-09-01,2025-10-01,2025-03-01,2025-10-01,12,36,najem okazjonalny,calkowity,2,rodzina,student,nie,możliwe zwierzęta,luksusowe,osoba_prywatna
+w5,n105,aktywna,2836,732,media,2117,tak,3209,2429,2025-01-01,2025-12-01,2025-01-01,2025-12-01,6,30,najem okazjonalny,pokoj,2,studenci,rodzina,nie,możliwe małe zwierzęta,wysoki standard,osoba_prywatna
+w6,n106,aktywna,8729,356,media,1528,tak,8934,8542,2025-08-01,2025-12-01,2025-05-01,2025-11-01,12,24,zwykly,calkowity,1,brak,singiel,tak,brak zwierząt,luksusowe,osoba_prywatna
+w7,n107,aktywna,1082,633,media,2990,nie,1557,781,2025-08-01,2025-12-01,2025-02-01,2025-11-01,6,12,zwykly,calkowity,2,rodzina,student,tak,możliwe zwierzęta,luksusowe,osoba_prywatna
+w8,n108,aktywna,1113,219,media,1196,tak,1393,861,2025-02-01,2025-11-01,2025-02-01,2025-12-01,6,18,najem okazjonalny,pokoj,3,senior,rodzina,nie,możliwe zwierzęta,wysoki standard,firma
+w9,n109,aktywna,1898,775,media,3562,nie,2270,1721,2025-07-01,2025-11-01,2025-01-01,2025-11-01,3,15,najem okazjonalny,pokoj,5,rodzina,senior,tak,możliwe zwierzęta,"parter, winda",firma
+w10,n110,aktywna,3228,396,media,2492,nie,3488,3107,2025-08-01,2025-12-01,2025-04-01,2025-10-01,12,18,zwykly,calkowity,2,rodzina,singiel,nie,brak zwierząt,ekonomiczne,osoba_prywatna
+w11,n111,aktywna,7806,312,media,1158,nie,8169,7314,2025-06-01,2025-11-01,2025-09-01,2025-12-01,12,36,zwykly,pokoj,2,senior,rodzina,tak,możliwe małe zwierzęta,blisko uczelni,osoba_prywatna
+w12,n112,aktywna,4046,461,media,1341,tak,4544,3565,2025-09-01,2025-12-01,2025-02-01,2025-11-01,12,36,zwykly,calkowity,4,studenci,senior,tak,możliwe zwierzęta,"parter, winda",firma
+w13,n113,aktywna,4057,744,media,2060,tak,4496,3845,2025-04-01,2025-11-01,2025-07-01,2025-12-01,12,24,zwykly,calkowity,4,brak,singiel,tak,możliwe małe zwierzęta,wysoki standard,firma
+w14,n114,aktywna,4492,150,media,3176,tak,4868,4228,2025-07-01,2025-11-01,2025-08-01,2025-10-01,6,18,najem okazjonalny,pokoj,1,rodzina,student,tak,brak zwierząt,duże rodzinne mieszkanie,osoba_prywatna
+w15,n115,aktywna,5489,259,media,3074,tak,5889,5221,2025-08-01,2025-11-01,2025-03-01,2025-12-01,12,36,zwykly,calkowity,1,studenci,senior,tak,brak zwierząt,wysoki standard,firma
+w16,n116,aktywna,1293,403,media,1739,tak,1643,989,2025-01-01,2025-12-01,2025-04-01,2025-10-01,3,9,najem okazjonalny,pokoj,1,rodzina,singiel,tak,brak zwierząt,wysoki standard,osoba_prywatna
+w17,n117,aktywna,8083,663,media,1821,nie,8384,7704,2025-06-01,2025-12-01,2025-02-01,2025-12-01,12,36,zwykly,calkowity,1,senior,rodzina,nie,możliwe małe zwierzęta,duże rodzinne mieszkanie,firma
+w18,n118,aktywna,7048,637,media,4472,tak,7310,6794,2025-01-01,2025-12-01,2025-08-01,2025-12-01,12,36,najem okazjonalny,calkowity,4,brak,rodzina,tak,możliwe małe zwierzęta,"parter, winda",firma
+w19,n119,aktywna,1333,506,media,3506,tak,1708,886,2025-09-01,2025-10-01,2025-09-01,2025-11-01,3,15,zwykly,calkowity,5,studenci,singiel,nie,możliwe małe zwierzęta,"parter, winda",firma
+w20,n120,aktywna,4107,129,media,2846,nie,4215,3633,2025-01-01,2025-12-01,2025-07-01,2025-10-01,3,27,najem okazjonalny,pokoj,4,studenci,rodzina,nie,możliwe zwierzęta,wysoki standard,firma
+w21,n121,aktywna,7726,457,media,2001,nie,7906,7279,2025-09-01,2025-10-01,2025-09-01,2025-11-01,3,9,zwykly,calkowity,1,rodzina,rodzina,nie,możliwe zwierzęta,duże rodzinne mieszkanie,firma
+w22,n122,aktywna,6930,126,media,1471,nie,7038,6729,2025-09-01,2025-10-01,2025-02-01,2025-12-01,12,24,zwykly,pokoj,0,brak,student,tak,brak zwierząt,"parter, winda",firma
+w23,n123,aktywna,3496,571,media,3770,nie,3927,3064,2025-02-01,2025-12-01,2025-04-01,2025-11-01,6,12,zwykly,calkowity,5,rodzina,senior,nie,brak zwierząt,wysoki standard,osoba_prywatna
+w24,n124,aktywna,7297,675,media,4397,nie,7605,7066,2025-08-01,2025-12-01,2025-03-01,2025-11-01,12,18,najem okazjonalny,pokoj,0,senior,rodzina,tak,brak zwierząt,luksusowe,firma
+w25,n125,aktywna,5617,796,media,4384,nie,6077,5451,2025-06-01,2025-11-01,2025-06-01,2025-11-01,3,9,najem okazjonalny,calkowity,3,brak,singiel,nie,brak zwierząt,luksusowe,osoba_prywatna
+w26,n126,aktywna,8493,588,media,2884,nie,8629,8264,2025-08-01,2025-10-01,2025-02-01,2025-10-01,6,30,zwykly,calkowity,5,studenci,singiel,tak,możliwe małe zwierzęta,duże rodzinne mieszkanie,firma
+w27,n127,aktywna,2797,369,media,2402,tak,3028,2414,2025-02-01,2025-10-01,2025-07-01,2025-10-01,12,36,najem okazjonalny,pokoj,5,rodzina,rodzina,tak,możliwe małe zwierzęta,blisko uczelni,firma
+w28,n128,aktywna,2183,726,media,2446,nie,2571,1827,2025-01-01,2025-11-01,2025-03-01,2025-12-01,3,27,najem okazjonalny,calkowity,3,studenci,senior,nie,możliwe zwierzęta,"parter, winda",osoba_prywatna
+w29,n129,aktywna,3096,333,media,1072,nie,3201,2699,2025-03-01,2025-12-01,2025-04-01,2025-12-01,6,18,najem okazjonalny,calkowity,3,senior,rodzina,tak,możliwe zwierzęta,duże rodzinne mieszkanie,firma
+w30,n130,aktywna,4095,492,media,2207,tak,4433,3675,2025-01-01,2025-10-01,2025-02-01,2025-12-01,12,36,zwykly,pokoj,3,rodzina,senior,tak,możliwe zwierzęta,blisko uczelni,osoba_prywatna
+w31,n131,aktywna,2033,344,media,1680,nie,2244,1832,2025-04-01,2025-11-01,2025-07-01,2025-10-01,6,12,najem okazjonalny,calkowity,0,brak,rodzina,tak,brak zwierząt,blisko uczelni,firma
+w32,n132,aktywna,2431,419,media,2057,tak,2900,2001,2025-02-01,2025-11-01,2025-05-01,2025-12-01,12,36,zwykly,calkowity,0,studenci,singiel,tak,możliwe małe zwierzęta,wysoki standard,firma
+w33,n133,aktywna,2418,606,media,2584,nie,2905,2261,2025-08-01,2025-12-01,2025-05-01,2025-12-01,12,18,najem okazjonalny,pokoj,3,studenci,senior,nie,możliwe zwierzęta,"parter, winda",osoba_prywatna
+w34,n134,aktywna,2563,586,media,2528,nie,2918,2203,2025-04-01,2025-12-01,2025-08-01,2025-11-01,3,27,najem okazjonalny,pokoj,4,brak,singiel,nie,brak zwierząt,duże rodzinne mieszkanie,firma
+w35,n135,aktywna,4997,750,media,1985,tak,5276,4844,2025-05-01,2025-11-01,2025-02-01,2025-12-01,12,24,zwykly,calkowity,3,studenci,rodzina,tak,brak zwierząt,"parter, winda",firma
+w36,n136,aktywna,4267,200,media,1745,nie,4630,3967,2025-08-01,2025-12-01,2025-09-01,2025-12-01,12,24,najem okazjonalny,calkowity,2,senior,senior,nie,możliwe zwierzęta,ekonomiczne,firma
+w37,n137,aktywna,6286,180,media,4967,tak,6754,6135,2025-06-01,2025-10-01,2025-01-01,2025-10-01,12,24,zwykly,calkowity,2,rodzina,senior,nie,możliwe małe zwierzęta,"parter, winda",osoba_prywatna
+w38,n138,aktywna,4803,501,media,1088,tak,5162,4578,2025-06-01,2025-10-01,2025-05-01,2025-11-01,3,9,zwykly,calkowity,3,studenci,singiel,nie,możliwe małe zwierzęta,blisko uczelni,osoba_prywatna
+w39,n139,aktywna,3053,223,media,4990,tak,3459,2595,2025-09-01,2025-12-01,2025-04-01,2025-12-01,12,36,zwykly,pokoj,2,rodzina,senior,tak,brak zwierząt,ekonomiczne,firma
+w40,n140,aktywna,8634,243,media,3556,tak,8790,8469,2025-03-01,2025-10-01,2025-02-01,2025-11-01,3,27,zwykly,pokoj,0,brak,student,tak,możliwe małe zwierzęta,"parter, winda",osoba_prywatna
+w41,n141,aktywna,8855,635,media,1862,tak,9157,8722,2025-03-01,2025-12-01,2025-03-01,2025-12-01,12,18,zwykly,pokoj,5,brak,singiel,tak,możliwe zwierzęta,ekonomiczne,osoba_prywatna
+w42,n142,aktywna,2033,776,media,1021,tak,2321,1782,2025-03-01,2025-12-01,2025-04-01,2025-11-01,6,30,zwykly,pokoj,4,studenci,student,nie,możliwe małe zwierzęta,ekonomiczne,firma
+w43,n143,aktywna,4223,509,media,1960,nie,4576,4088,2025-03-01,2025-11-01,2025-08-01,2025-10-01,12,24,zwykly,pokoj,5,senior,senior,nie,możliwe małe zwierzęta,duże rodzinne mieszkanie,osoba_prywatna
+w44,n144,aktywna,8562,264,media,4503,tak,9059,8430,2025-03-01,2025-11-01,2025-09-01,2025-12-01,3,15,zwykly,calkowity,4,brak,singiel,tak,brak zwierząt,duże rodzinne mieszkanie,firma
+w45,n145,aktywna,8767,262,media,3389,nie,9148,8642,2025-07-01,2025-12-01,2025-04-01,2025-10-01,6,30,najem okazjonalny,pokoj,5,brak,student,tak,brak zwierząt,luksusowe,osoba_prywatna
+w46,n146,aktywna,8299,199,media,3187,nie,8659,8185,2025-06-01,2025-12-01,2025-05-01,2025-11-01,6,18,najem okazjonalny,pokoj,2,studenci,student,nie,brak zwierząt,blisko uczelni,firma
+w47,n147,aktywna,6684,217,media,1683,nie,6872,6367,2025-08-01,2025-12-01,2025-05-01,2025-10-01,12,24,najem okazjonalny,calkowity,5,studenci,rodzina,tak,możliwe małe zwierzęta,blisko uczelni,osoba_prywatna
+w48,n148,aktywna,7710,264,media,3990,nie,8007,7543,2025-03-01,2025-12-01,2025-05-01,2025-12-01,12,18,najem okazjonalny,calkowity,2,senior,senior,nie,brak zwierząt,"parter, winda",osoba_prywatna
+w49,n149,aktywna,1139,282,media,2778,nie,1380,749,2025-09-01,2025-10-01,2025-05-01,2025-11-01,12,18,zwykly,pokoj,2,brak,rodzina,nie,możliwe zwierzęta,"parter, winda",firma
+w50,n150,aktywna,7396,795,media,4656,tak,7537,7149,2025-01-01,2025-10-01,2025-05-01,2025-11-01,3,27,najem okazjonalny,calkowity,1,rodzina,senior,nie,możliwe zwierzęta,blisko uczelni,firma
+w51,n151,aktywna,6121,437,media,3597,nie,6271,5672,2025-02-01,2025-10-01,2025-02-01,2025-10-01,6,12,najem okazjonalny,calkowity,2,rodzina,singiel,nie,możliwe zwierzęta,blisko uczelni,firma
+w52,n152,aktywna,3344,476,media,4087,tak,3834,2887,2025-02-01,2025-10-01,2025-07-01,2025-11-01,12,36,najem okazjonalny,pokoj,5,rodzina,rodzina,nie,możliwe zwierzęta,ekonomiczne,firma
+w53,n153,aktywna,2911,199,media,2045,tak,3388,2730,2025-07-01,2025-11-01,2025-07-01,2025-12-01,12,18,najem okazjonalny,pokoj,0,senior,senior,nie,możliwe zwierzęta,"parter, winda",osoba_prywatna
+w54,n154,aktywna,7881,147,media,3267,tak,8093,7606,2025-08-01,2025-10-01,2025-03-01,2025-12-01,3,9,zwykly,calkowity,5,studenci,senior,tak,brak zwierząt,blisko uczelni,osoba_prywatna
+w55,n155,aktywna,6896,743,media,2887,tak,7082,6753,2025-07-01,2025-12-01,2025-06-01,2025-12-01,3,27,najem okazjonalny,pokoj,3,brak,rodzina,nie,brak zwierząt,wysoki standard,firma
+w56,n156,aktywna,2346,638,media,4657,nie,2652,1938,2025-02-01,2025-10-01,2025-03-01,2025-11-01,6,30,zwykly,pokoj,4,brak,student,nie,brak zwierząt,ekonomiczne,osoba_prywatna
+w57,n157,aktywna,3852,129,media,1785,nie,4213,3524,2025-07-01,2025-11-01,2025-06-01,2025-10-01,6,18,najem okazjonalny,calkowity,3,senior,singiel,nie,brak zwierząt,ekonomiczne,osoba_prywatna
+w58,n158,aktywna,5440,217,media,3079,tak,5677,4952,2025-06-01,2025-11-01,2025-03-01,2025-12-01,3,9,najem okazjonalny,pokoj,1,studenci,rodzina,nie,możliwe małe zwierzęta,blisko uczelni,firma
+w59,n159,aktywna,3061,342,media,3022,tak,3462,2647,2025-01-01,2025-11-01,2025-02-01,2025-12-01,3,15,najem okazjonalny,calkowity,1,senior,senior,nie,możliwe zwierzęta,duże rodzinne mieszkanie,firma
+w60,n160,aktywna,4613,339,media,3072,tak,5039,4346,2025-09-01,2025-11-01,2025-03-01,2025-11-01,3,15,zwykly,calkowity,0,rodzina,singiel,nie,możliwe małe zwierzęta,ekonomiczne,osoba_prywatna
+w61,n161,aktywna,1550,285,media,1795,tak,1724,1389,2025-09-01,2025-11-01,2025-01-01,2025-12-01,3,27,zwykly,pokoj,2,senior,senior,nie,możliwe zwierzęta,luksusowe,osoba_prywatna
+w62,n162,aktywna,8936,221,media,1506,nie,9130,8507,2025-04-01,2025-12-01,2025-06-01,2025-10-01,12,24,zwykly,calkowity,0,senior,singiel,tak,brak zwierząt,duże rodzinne mieszkanie,firma
+w63,n163,aktywna,7872,133,media,1110,tak,8014,7392,2025-01-01,2025-11-01,2025-03-01,2025-10-01,6,30,najem okazjonalny,calkowity,3,senior,student,tak,możliwe małe zwierzęta,luksusowe,firma
+w64,n164,aktywna,2725,344,media,2432,tak,3215,2389,2025-04-01,2025-11-01,2025-04-01,2025-12-01,3,27,zwykly,calkowity,4,studenci,senior,nie,możliwe małe zwierzęta,luksusowe,firma
+w65,n165,aktywna,6626,391,media,4003,tak,6809,6402,2025-02-01,2025-12-01,2025-05-01,2025-12-01,3,27,najem okazjonalny,pokoj,1,rodzina,rodzina,tak,brak zwierząt,"parter, winda",firma
+w66,n166,aktywna,6699,682,media,1081,tak,6833,6342,2025-03-01,2025-10-01,2025-02-01,2025-11-01,3,9,zwykly,pokoj,3,rodzina,senior,tak,brak zwierząt,ekonomiczne,osoba_prywatna
+w67,n167,aktywna,4599,258,media,4943,nie,5089,4236,2025-04-01,2025-11-01,2025-06-01,2025-10-01,3,27,zwykly,pokoj,5,senior,singiel,nie,możliwe zwierzęta,ekonomiczne,osoba_prywatna
+w68,n168,aktywna,2072,371,media,1489,nie,2176,1893,2025-05-01,2025-10-01,2025-06-01,2025-10-01,12,24,zwykly,pokoj,1,studenci,student,nie,możliwe małe zwierzęta,"parter, winda",firma
+w69,n169,aktywna,8659,420,media,1827,tak,9010,8338,2025-03-01,2025-11-01,2025-09-01,2025-11-01,3,15,najem okazjonalny,pokoj,1,senior,senior,tak,możliwe małe zwierzęta,duże rodzinne mieszkanie,osoba_prywatna
+w70,n170,aktywna,6633,568,media,3538,nie,7043,6257,2025-07-01,2025-12-01,2025-03-01,2025-12-01,3,27,najem okazjonalny,calkowity,2,studenci,senior,nie,możliwe małe zwierzęta,duże rodzinne mieszkanie,osoba_prywatna
+w71,n171,aktywna,2981,345,media,3263,nie,3344,2841,2025-08-01,2025-11-01,2025-01-01,2025-12-01,12,36,najem okazjonalny,pokoj,3,studenci,student,tak,możliwe zwierzęta,"parter, winda",osoba_prywatna
+w72,n172,aktywna,6885,650,media,1884,nie,7249,6509,2025-07-01,2025-11-01,2025-07-01,2025-12-01,3,9,zwykly,calkowity,2,senior,student,nie,możliwe małe zwierzęta,blisko uczelni,firma
+w73,n173,aktywna,1989,761,media,1651,nie,2283,1829,2025-03-01,2025-10-01,2025-03-01,2025-10-01,6,30,zwykly,pokoj,1,rodzina,senior,nie,możliwe zwierzęta,ekonomiczne,firma
+w74,n174,aktywna,6405,491,media,1603,nie,6849,6104,2025-03-01,2025-10-01,2025-09-01,2025-11-01,6,12,najem okazjonalny,calkowity,1,studenci,student,nie,możliwe zwierzęta,duże rodzinne mieszkanie,firma
+w75,n175,aktywna,6388,556,media,1091,tak,6514,5923,2025-08-01,2025-11-01,2025-02-01,2025-10-01,3,27,zwykly,pokoj,0,studenci,singiel,tak,możliwe zwierzęta,duże rodzinne mieszkanie,firma
+w76,n176,aktywna,8140,107,media,1250,nie,8456,7842,2025-01-01,2025-10-01,2025-06-01,2025-12-01,12,24,najem okazjonalny,pokoj,5,rodzina,senior,tak,brak zwierząt,blisko uczelni,osoba_prywatna
+w77,n177,aktywna,2031,319,media,1023,nie,2362,1613,2025-06-01,2025-12-01,2025-08-01,2025-11-01,6,30,zwykly,pokoj,4,brak,senior,tak,możliwe zwierzęta,luksusowe,osoba_prywatna
+w78,n178,aktywna,7095,109,media,4229,nie,7591,6663,2025-01-01,2025-11-01,2025-01-01,2025-12-01,6,18,zwykly,calkowity,5,brak,student,tak,możliwe małe zwierzęta,blisko uczelni,osoba_prywatna
+w79,n179,aktywna,6850,324,media,4052,tak,7218,6373,2025-06-01,2025-11-01,2025-05-01,2025-10-01,3,27,zwykly,pokoj,5,senior,student,nie,możliwe małe zwierzęta,ekonomiczne,osoba_prywatna
+w80,n180,aktywna,6903,789,media,3590,tak,7211,6466,2025-04-01,2025-12-01,2025-08-01,2025-10-01,6,18,zwykly,pokoj,2,senior,student,nie,brak zwierząt,"parter, winda",firma
+w81,n181,aktywna,6629,500,media,1090,nie,7093,6150,2025-09-01,2025-10-01,2025-05-01,2025-11-01,3,27,najem okazjonalny,calkowity,2,studenci,rodzina,nie,możliwe zwierzęta,wysoki standard,firma
+w82,n182,aktywna,8692,312,media,3184,tak,8990,8458,2025-03-01,2025-12-01,2025-04-01,2025-11-01,3,9,najem okazjonalny,pokoj,0,rodzina,senior,tak,brak zwierząt,blisko uczelni,firma
+w83,n183,aktywna,4631,614,media,1040,nie,4884,4176,2025-01-01,2025-10-01,2025-06-01,2025-11-01,6,18,zwykly,calkowity,2,rodzina,senior,tak,brak zwierząt,blisko uczelni,firma
+w84,n184,aktywna,1430,129,media,4826,nie,1796,1156,2025-08-01,2025-12-01,2025-07-01,2025-11-01,3,15,najem okazjonalny,pokoj,0,studenci,student,tak,możliwe małe zwierzęta,luksusowe,osoba_prywatna
+w85,n185,aktywna,1831,160,media,2235,nie,2241,1483,2025-03-01,2025-11-01,2025-07-01,2025-11-01,12,18,zwykly,pokoj,2,studenci,singiel,tak,możliwe małe zwierzęta,"parter, winda",osoba_prywatna
+w86,n186,aktywna,8492,665,media,4605,nie,8988,8386,2025-04-01,2025-11-01,2025-02-01,2025-12-01,6,18,zwykly,calkowity,0,studenci,senior,nie,możliwe małe zwierzęta,luksusowe,osoba_prywatna
+w87,n187,aktywna,8680,370,media,2975,tak,8940,8397,2025-03-01,2025-10-01,2025-02-01,2025-11-01,6,18,zwykly,pokoj,0,studenci,student,nie,możliwe małe zwierzęta,duże rodzinne mieszkanie,firma
+w88,n188,aktywna,2541,363,media,2114,tak,3005,2365,2025-08-01,2025-10-01,2025-04-01,2025-12-01,3,15,najem okazjonalny,pokoj,5,senior,student,tak,możliwe małe zwierzęta,wysoki standard,firma
+w89,n189,aktywna,2452,129,media,4587,tak,2945,2222,2025-09-01,2025-12-01,2025-01-01,2025-12-01,12,18,zwykly,pokoj,1,studenci,rodzina,nie,możliwe małe zwierzęta,duże rodzinne mieszkanie,firma
+w90,n190,aktywna,2081,230,media,2993,nie,2484,1934,2025-09-01,2025-12-01,2025-08-01,2025-12-01,6,30,zwykly,pokoj,5,studenci,singiel,nie,brak zwierząt,"parter, winda",firma
+w91,n191,aktywna,7343,505,media,2319,nie,7667,6870,2025-02-01,2025-10-01,2025-08-01,2025-11-01,6,12,najem okazjonalny,pokoj,5,rodzina,singiel,nie,możliwe małe zwierzęta,ekonomiczne,osoba_prywatna
+w92,n192,aktywna,4959,694,media,1790,tak,5372,4628,2025-03-01,2025-12-01,2025-05-01,2025-10-01,3,9,zwykly,pokoj,5,studenci,singiel,tak,możliwe zwierzęta,luksusowe,firma
+w93,n193,aktywna,3179,375,media,1989,nie,3524,2728,2025-06-01,2025-10-01,2025-03-01,2025-11-01,3,15,najem okazjonalny,pokoj,2,senior,student,nie,możliwe zwierzęta,blisko uczelni,osoba_prywatna
+w94,n194,aktywna,1564,161,media,1243,tak,1948,1153,2025-01-01,2025-11-01,2025-07-01,2025-11-01,12,18,zwykly,pokoj,4,brak,student,tak,możliwe zwierzęta,"parter, winda",osoba_prywatna
+w95,n195,aktywna,1997,408,media,2742,nie,2425,1549,2025-01-01,2025-11-01,2025-08-01,2025-10-01,12,18,najem okazjonalny,pokoj,3,rodzina,rodzina,tak,możliwe zwierzęta,blisko uczelni,osoba_prywatna
+w96,n196,aktywna,4844,365,media,1179,tak,5248,4699,2025-01-01,2025-10-01,2025-05-01,2025-10-01,12,36,najem okazjonalny,pokoj,0,rodzina,student,nie,możliwe małe zwierzęta,ekonomiczne,osoba_prywatna
+w97,n197,aktywna,7305,756,media,4331,nie,7629,6872,2025-08-01,2025-11-01,2025-01-01,2025-11-01,6,18,najem okazjonalny,calkowity,4,brak,rodzina,nie,możliwe zwierzęta,luksusowe,firma
+w98,n198,aktywna,8928,705,media,3533,nie,9171,8627,2025-03-01,2025-10-01,2025-04-01,2025-11-01,12,36,najem okazjonalny,pokoj,3,senior,singiel,nie,brak zwierząt,"parter, winda",firma
+w99,n199,aktywna,5014,476,media,4288,nie,5352,4552,2025-07-01,2025-11-01,2025-07-01,2025-11-01,3,9,zwykly,pokoj,2,rodzina,rodzina,tak,możliwe zwierzęta,ekonomiczne,osoba_prywatna
+w100,n200,aktywna,1253,379,media,3649,tak,1436,915,2025-03-01,2025-11-01,2025-06-01,2025-10-01,6,12,najem okazjonalny,calkowity,1,brak,student,nie,możliwe zwierzęta,"parter, winda",osoba_prywatna

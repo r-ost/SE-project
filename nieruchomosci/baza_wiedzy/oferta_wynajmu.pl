@@ -88,4 +88,3 @@ row_to_oferta_wynajmu(Row, OfertaWynajmu) :-
         opis(Opis),
         typ_wlasciciela(TypWlasciciela)
     ], OfertaWynajmu).
-
