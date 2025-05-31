@@ -1,6 +1,157 @@
 \section{Moduł wnioskowania w oparciu o reguły minimalne}
-% TODO
-% - wyznaczanie reduktów
-% - wyznaczanie reguł minimalnych
-% - przykłady działania modułu wnioskowania
-% - opis technologii, w której został zaimplementowany moduł wnioskowania (prolog)
+
+Moduł wnioskowania został zaimplementowany wykorzystując teorię zbiorów przybliżonych (rough set theory) opracowaną przez Zdzisława Pawlaka. Teoria ta stanowi matematyczne narzędzie do analizy i klasyfikacji danych nieprecyzyjnych lub niepełnych.
+
+\subsection{Wyznaczanie reduktów}
+
+Redukt stanowi kluczowe pojęcie w teorii zbiorów przybliżonych. Jest to minimalny zbiór atrybutów, który zachowuje wszystkie relacje nierozróżnialności obecne w oryginalnym zbiorze atrybutów.
+
+\subsubsection*{Algorytm wyznaczania reduktów}
+
+W projekcie zastosowano algorytm wyznaczania reduktów oparty na relacji nierozróżnialności (indiscernibility relation). Algorytm został zaimplementowany w języku Python i jego pseudokod jest przedstawiony poniżej.
+
+\begin{verbatim}
+ALGORITM: Wyznaczanie_Reduktów(dane, atrybuty_warunkowe, atrybut_decyzyjny)
+
+WEJŚCIE: 
+    dane - tabela decyzyjna z obiektami
+    atrybuty_warunkowe - zbiór atrybutów warunkowych
+    atrybut_decyzyjny - atrybut klasyfikujący
+
+WYJŚCIE: zbiór wszystkich reduktów i rdzeń
+
+ALGORYTM:
+    redukty := pusta_lista
+    rdzeń := []
+    
+    // Generowanie wszystkich kombinacji atrybutów
+    znaleziono_redukt := FAŁSZ
+    DLA każdej długości k OD 1 DO rozmiar(atrybuty_warunkowe):
+        kombinacje := generuj_kombinacje(atrybuty_warunkowe, k)
+        
+        DLA każdej kombinacji, zaczynając od najmniejszych:
+            JEŻELI jest_reduktem(kombinacja, dane, atrybut_decyzyjny):
+                dodaj kombinację do reduktów
+                znaleziono_redukt := PRAWDA
+        
+        JEŻELI znaleziono_redukt:
+            // chcemy mieć redukty o minimalnej liczbie atrybutów
+            Zakończ pętlę
+    
+    // Wyznaczanie rdzenia jako części wspólnej wszystkich reduktów
+    rdzeń := przecięcie_wszystkich(redukty)
+    
+    ZWRÓĆ (redukty, rdzeń)
+
+FUNKCJA jest_reduktem(zbiór_atrybutów, dane, atrybut_decyzyjny):
+    // Sprawdzenie spójności - czy nie ma sprzeczności
+    JEŻELI NIE jest_spójny(zbiór_atrybutów, dane, atrybut_decyzyjny):
+        ZWRÓĆ FAŁSZ
+    
+    // Sprawdzenie minimalności
+    DLA każdego atrybutu a W zbiór_atrybutów:
+        zredukowany_zbiór := zbiór_atrybutów - {a}
+        
+        JEŻELI zredukowany_zbiór NIE jest pusty AND 
+               jest_spójny(zredukowany_zbiór, dane, atrybut_decyzyjny):
+            ZWRÓĆ FAŁSZ  // nie jest minimalny
+    
+    ZWRÓĆ PRAWDA
+
+
+FUNKCJA jest_spójny(atrybuty, dane, atrybut_decyzyjny):
+    // Wyznacz relację nierozróżnialności dla danych atrybutów
+    klasy_równoważności := wyznacz_klasy_równoważności(atrybuty, dane)
+    
+    // Sprawdź czy wszystkie obiekty w każdej klasie równoważności
+    // mają tę samą wartość atrybutu decyzyjnego
+    DLA każdej klasy K W klasy_równoważności:
+        wartości_decyzyjne := {dane[obj][atrybut_decyzyjny] 
+                                  DLA każdego obiektu obj W K}
+        
+        JEŻELI rozmiar(wartości_decyzyjne) > 1:
+            ZWRÓĆ FAŁSZ  // sprzeczność - różne decyzje w tej samej klasie
+    
+    ZWRÓĆ PRAWDA
+
+
+FUNKCJA wyznacz_klasy_równoważności(atrybuty, dane):
+    klasy := {}
+    przetworzone := {}
+    
+    DLA każdego obiektu obj W dane:
+        JEŻELI obj NIE jest W przetworzone:
+            klasa_równoważności := {obj}
+            wartości_obj := pobierz_wartości(dane[obj], atrybuty)
+            
+            DLA każdego innego_obj W dane:
+                JEŻELI inny_obj != obj AND inny_obj NIE jest W przetworzone:
+                    wartości_inny := pobierz_wartości(dane[inny_obj], atrybuty)
+                    
+                    JEŻELI wartości_obj == wartości_inny:
+                        dodaj inny_obj do klasa_równoważności
+            
+            // Oznacz wszystkie obiekty z tej klasy jako przetworzone
+            DLA każdego o W klasa_równoważności:
+                przetworzone[o] := PRAWDA
+            
+            dodaj klasa_równoważności do klasy
+    
+    ZWRÓĆ klasy
+\end{verbatim}
+
+\subsection{Wyznaczanie reguł minimalnych}
+
+Na podstawie wyznaczonych reduktów generowane są reguły minimalne, które stanowią podstawę modułu. Wyznaczanie reguł minimalnych zostało zaimplementowane w języku Python. Wyjściem algorytmu jest zbiór reguł minimalnych w języku Prolog, które mogą być wykorzystane do klasyfikacji nowych obiektów. Zaimplementowany algorytm pozwala również na wyznaczenie reguł o zadanym poziomie dokładności, co umożliwia dostosowanie modelu do niedokładnych danych.
+\\ \\
+Reguły minimalne powstają według następującego schematu:
+\begin{enumerate}
+    \item \textbf{Wybór reduktu} - wybór pojedynczego reduktu z wyznaczonych wcześniej, dla którego będą tworzone reguły
+    \item \textbf{Grupowanie obiektów} - obiekty o identycznych wartościach atrybutów z reduktu są grupowane
+    \item \textbf{Formułowanie reguł} - dla każdej grupy tworzona jest reguła postaci: \\
+    \texttt{JEŚLI (warunek\_1 AND warunek\_2 AND ... AND warunek\_n) TO klasa}
+\end{enumerate}
+
+\noindent W algorytmie wyznaczania reguł minimalnych zastosowano podejście przeszukiwania wszystkich możliwych kombinacji atrybutów warunkowych w redukcie. Z tego powodu złozoność algorytmu jest wykładnicza w stosunku do liczby atrybutów warunkowych w redukcie. W celu poprawy wydajności algorytmu, można byłoby zastosować heurystyki np. heurystykę Johnsona.
+
+\subsection{Przykład działania modułu}
+
+Weźmy następujący podzbiór atrybutów obiektu "nieruchomość" opisanego w tabeli \ref{tab:property_details}:
+% 'Typ', 'Lokalizacja', 'Winda', 'Parking', 'TypParking', 'Opis'
+\begin{itemize}
+    \item Standard (atrybut decyzyjny): \{luksusowy, wysoki, średni, niski\}
+    \item Typ: \{dom, mieszkanie\}
+    \item Lokalizacja: \{centrum, obrzeża, przedmieścia\}
+    \item Winda: \{tak, nie\}
+    \item Parking: \{tak, nie\}
+    \item TypParking: \{podziemny, zewnetrzny, brak\}
+    \item Opis - tekstowy opis nieruchomości, od którego nie zależy wartość atrybutu decyzyjnego
+\end{itemize}
+Zadaniem rozważanego modułu wnioskowania jest wyznaczenie reguł minimalnych, które pozwolą na klasyfikację standardu nieruchomości w zależności od wartości atrybutów warunkowych. W tym celu system analizuje dane treningowe i wyznacza redukt, który jest minimalnym zbiorem atrybutów warunkowych zachowującym zdolność rozróżniania obiektów. Następnie na podstawie tego reduktu generowane są reguły minimalne w języku Prolog.
+
+\subsubsection*{Wyznaczony redukt:} 
+\begin{verbatim}
+{Typ, Lokalizacja}
+\end{verbatim}
+
+\subsubsection*{Reguły minimalne zwrócone przez algorytm, zapisane w języku Prolog}
+\begin{verbatim}
+% autogenerated using generate_minimal_rules.ipynb
+standard(Nieruchomosc, luksusowy) :-
+    nieruchomosc_typ(Nieruchomosc, Typ),
+    Typ = dom.
+
+standard(Nieruchomosc, wysoki) :-
+    nieruchomosc_lokalizacja(Nieruchomosc, Lokalizacja),
+    nieruchomosc_typ(Nieruchomosc, Typ),
+    Typ = mieszkanie,
+    Lokalizacja = centrum.
+
+standard(Nieruchomosc, niski) :-
+    nieruchomosc_lokalizacja(Nieruchomosc, Lokalizacja),
+    Lokalizacja = przedmiescia.
+
+standard(Nieruchomosc, sredni) :-
+    nieruchomosc_lokalizacja(Nieruchomosc, Lokalizacja),
+    Lokalizacja = obrzeza.
+\end{verbatim}
