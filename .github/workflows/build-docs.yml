@@ -23,7 +23,7 @@ jobs:
             pdflatex -draftmode -interaction=nonstopmode main.tex
           post_compile: |
             pdflatex -interaction=nonstopmode main.tex
-          working_directory: docs
+          working_directory: docs/opis_projektu
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
