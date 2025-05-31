@@ -6,8 +6,8 @@ standard(Nieruchomosc, luksusowy) :-
 
 
 standard(Nieruchomosc, wysoki) :-
-    nieruchomosc_typ(Nieruchomosc, Typ),
     nieruchomosc_lokalizacja(Nieruchomosc, Lokalizacja),
+    nieruchomosc_typ(Nieruchomosc, Typ),
     Typ = mieszkanie,
     Lokalizacja = centrum.
 
