@@ -1,0 +1,128 @@
+\section{Moduł wnioskowania ekspeckiego}
+% TODO:
+% - dodać przykład działania modułu wnioskowania
+% - opis technologii, w której został zaimplementowany moduł wnioskowania (prolog)
+
+Moduł wnioskowania systemu ekspertowego jest odpowiedzialny za analizę danych wejściowych i generowanie rekomendacji na podstawie reguł zawartych w bazie wiedzy. W tym module zdefiniowane są reguły, które pozwalają na klasyfikację nieruchomości, ofert sprzedaży i wynajmu oraz określenie ich przydatności dla różnych grup użytkowników. Reguły zostały zdefiniowane w oparciu o wiedzę ekspertów dziedzinowych. Poniżej przedstawiono szczegółową specyfikację reguł wnioskowania.
+
+\subsection{Nieruchomość}
+\begin{enumerate}[label=N\arabic*.]
+    \item Mieszkanie jest \textbf{małe}, jeśli ma mniej niż 40 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{średnie}, jeśli ma od 40 do 80 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{duże}, jeśli ma więcej niż 80 metrów kwadratowych powierzchni.
+    \item Mieszkanie jest \textbf{blisko centrum}, jeśli odległość do centrum miasta jest mniejsza niż 5 km.
+    \item Mieszkanie jest \textbf{daleko od centrum}, jeśli odległość do centrum miasta jest większa niż 15 km.
+    \item Mieszkanie jest \textbf{nowe}, jeśli zostało wybudowane po 2010 roku.
+    \item Mieszkanie jest \textbf{stare}, jeśli zostało wybudowane przed 1990 rokiem.
+    \item Mieszkanie jest \textbf{w dobrym stanie}, jeśli ocena stanu nieruchomości jest wyższa niż 3.
+    \item Mieszkanie jest \textbf{w złym stanie}, jeśli ocena stanu nieruchomości jest mniejsza lub równa 3.
+    \item Mieszkanie jest \textbf{energooszczędne}, jeśli ocena efektywności energetycznej jest wyższa niż B.
+    \item Mieszkanie jest \textbf{atrakcyjne}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item jest duże,
+        \item ma więcej niż 2 pokoje,
+        \item ma więcej niż 2 łazienki,
+        \item jest blisko centrum,
+        \item jest w dobrym stanie.
+    \end{enumerate}
+    \item Mieszkanie jest \textbf{odpowiednie dla seniorów}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item znajduje się na parterze lub budynek posiada windę,
+        \item jest w dobrym stanie,
+        \item nie jest w centrum miasta.
+    \end{enumerate}
+    \item Mieszkanie jest \textbf{odpowiednie dla osób z niepełnosprawnościami}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item budynek posiada windę znajduje się na parterze,
+        \item jest w dobrym stanie,
+        \item jest nowe.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Oferta sprzedaży}
+\begin{enumerate}[label=S\arabic*.]
+    \item Oferta sprzedaży jest \textbf{dobra dla rodziny}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item liczba pokoi jest większa niż 3,
+        \item liczba łazienek jest większa niż 2,
+        \item powierzchnia mieszkania jest większa niż 80 metrów kwadratowych,
+        \item typ nieruchomości to dom lub mieszkanie,
+        \item odległość do centrum miasta jest mniejsza niż 10 km,
+        \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{dobra dla singla}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item liczba pokoi jest równa 1,
+        \item liczba łazienek jest równa 1,
+        \item powierzchnia mieszkania jest mniejsza niż 40 metrów kwadratowych,
+        \item nieruchomość jest w dobrym stanie,
+        \item cena oferty jest niższa niż 500 000 zł.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{atrakcyjna inwestycyjnie}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item cena za metr kwadratowy jest niższa niż 500 000 zł,
+        \item nieruchomość jest w dobrym stanie lub wymaga jedynie drobnych remontów,
+        \item lokalizacja nieruchomości jest blisko centrum.
+    \end{enumerate}
+    \item Oferta sprzedaży jest \textbf{luksusowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item powierzchnia mieszkania jest większa niż 150 metrów kwadratowych,
+        \item nieruchomość posiada co najmniej 3 łazienki,
+        \item nieruchomość jest umeblowana,
+        \item nieruchomość jest wykończona w wysokim standardzie.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Oferta wynajmu}
+\begin{enumerate}[label=W\arabic*.]
+    \item Oferta wynajmu jest \textbf{dobra dla studentów}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item liczba pokoi jest większa niż 2,
+        \item liczba łazienek jest większa niż 1,
+        \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{dobra dla rodzin}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item liczba pokoi jest większa niż 3,
+        \item liczba łazienek jest większa niż 2,
+        \item powierzchnia nieruchomości jest większa niż 80 metrów kwadratowych,
+        \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{ekonomiczna}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item cena wynajmu jest niższa niż 2000 zł,
+        \item nieruchomość jest w dobrym stanie.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{luksusowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item powierzchnia nieruchomości jest większa niż 150 metrów kwadratowych,
+        \item nieruchomość posiada co najmniej 3 łazienki,
+        \item nieruchomość jest umeblowana
+        \item nieruchomość jest wykończona w wysokim standardzie,
+        \item cena wynajmu jest wyższa niż 5000 zł.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{przyjazna dla zwierząt}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item polityka dotycząca zwierząt pozwala na ich posiadanie,
+        \item jest domem lub mieszkaniem na parterze.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{odpowiednia dla seniorów}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item znajduje się na parterze lub budynek posiada windę,
+        \item nieruchomość jest w dobrym stanie,
+        \item nie jest w centrum miasta,
+        \item jest ekonomiczna.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{krótkoterminowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item minimalny czas wynajmu wynosi mniej niż 6 miesięcy.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{długoterminowa}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item maksymalny czas wynajmu wynosi więcej niż 12 miesięcy.
+    \end{enumerate}
+    \item Oferta wynajmu jest \textbf{dostępna od zaraz}, jeśli:
+    \begin{enumerate}[label=\arabic*.]
+        \item minimalna data rozpoczęcia wynajmu jest nie później niż za miesiąc.
+    \end{enumerate}
+\end{enumerate}

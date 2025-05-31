@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{tabularx}
+
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+\usepackage[letterpaper,top=3cm,bottom=3cm,left=4cm,right=4cm,marginparwidth=1.75cm]{geometry}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\setcounter{tocdepth}{2}
+
+\title{Systemy ekspertowe: Nieruchomości \\ \large{Raport końcowy}}
+\author{Michalina Majewska
+	\and Hubert Malinowski
+	\and Igor Staręga
+	\and Jan Szablanowski}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\vspace{2cm}
+\newpage
+
+\section{Wprowadzenie}
+
+Niniejszy raport przedstawia podsumowanie realizacji projektu systemu ekspertowego wspomagającego użytkownika w wyborze nieruchomości do zakupu lub wynajmu. Projekt został zrealizowany w ramach przedmiotu "Systemy ekspertowe".
+
+\subsection{Cel projektu}
+
+Celem projektu jest stworzenie systemu ekspertowego, który będzie wspomagał użytkowników w wyborze nieruchomości do zakupu lub wynajmu. System będzie analizował dane o ofertach sprzedaży nieruchomości oraz preferencje użytkownika. Następnie na ich podstawie będzie wnioskował, która oferta jest dla użytkownika najlepsza. System będzie również zawierał moduł decyzyjny do wyznaczania reguł minimalnych, który pozwoli użytkownikowi sprawdzić, jakie są kryteria wyboru odpowiedniej oferty.
+
+\input{sections/baza_wiedzy.tex}
+\input{sections/modul_wnioskowania.tex}
+\input{sections/modul_wnioskowania_minimalne.tex}
+\input{sections/aplikacja.tex}
+
+\section{Podsumowanie}
+Projekt został zrealizowany zgodnie z założeniami. Stworzono aplikację okienkową, która umożliwia użytkownikowi wprowadzanie danych o preferencjach dotyczących nieruchomości oraz przeglądanie rekomendacji. System jest w stanie analizować oferty nieruchomości i tworzyć na ich podstawie reguły minimalne, co pozwala użytkownikowi na dokonanie świadomego wyboru.
+
+\end{document}

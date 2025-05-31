@@ -1,0 +1,112 @@
+\section{Baza wiedzy systemu ekspertowego}
+
+System ekspertowy korzysta z bazy danych, przechowującej dane o nieruchomościach, ofertach sprzedaży i wynajmu. Baza zostanie stworzona we współpracy z zespołem ekspertów dziedzinowych. Na podstawie danych z bazy i reguł system będzie w stanie generować rekomendacje dla użytkowników, odpowiadając na ich zapytania. W kolejnych sekcjach przedstawiono specyfikację rekordów, które będą przechowywane w bazie danych systemu ekspertowego.
+
+\subsection{Specyfikacja rekordów}
+
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{nieruchomość}}
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|X|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator nieruchomości \\
+    property\_type & String & Typ nieruchomości (mieszkanie, dom, działka, lokal użytkowy, biuro) \\
+    location\_type & String & Typ lokalizacji (miasto, wieś, przedmieścia) \\
+    street\_address & String & Nazwa ulicy i numer \\
+    city & String & Nazwa miasta \\
+    state & String & Region administracyjny \\
+    postal\_code & String & Kod pocztowy \\
+    country & String & Nazwa kraju \\
+    latitude & Float & Współrzędna geograficzna szerokości \\
+    longitude & Float & Współrzędna geograficzna długości \\
+    distance\_to\_center & Float & Odległość do centrum miasta w kilometrach \\
+    total\_area & Float & Całkowita powierzchnia w metrach kwadratowych \\
+    standard & String & Standard wykończenia nieruchomości \\
+    rooms & Integer & Liczba pokojów  \\
+    bathrooms & Integer & Liczba łazienek \\
+    year\_built & Integer & Rok budowy nieruchomości \\
+    construction\_type & String & Rodzaj materiału konstrukcyjnego \\
+    floors & Integer & Liczba pięter w budynku \\
+    floor\_number & Integer & Numer piętra dla mieszkań \\
+    has\_elevator & Boolean & Czy budynek posiada windę \\
+    has\_parking & Boolean & Czy dostępny jest parking \\
+    parking\_type & String & Rodzaj parkingu (garaż podziemny, ulica) \\
+    furnished & Boolean & Czy nieruchomość jest umeblowana \\
+    heating\_type & String & Rodzaj systemu ogrzewania \\
+    energy\_rating & String & Ocena efektywności energetycznej \\
+    flood\_risk & String & Ocena ryzyka powodziowego \\
+    property\_condition & String & Ogólna ocena stanu nieruchomości \\
+    description & String & Szczegółowy opis nieruchomości \\
+    available\_from & DateTime & Data, od której nieruchomość jest dostępna \\
+    last\_renovation\_date & DateTime & Data ostatniego remontu \\
+    created\_at & TimeStamp & Czas utworzenia rekordu \\
+    updated\_at & TimeStamp & Czas aktualizacji rekordu \\
+    \hline
+    \end{tabularx}
+    \label{tab:property_details}
+\end{table}
+
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{oferta sprzedaży}}
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|X|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator oferty sprzedaży \\
+    property\_id & String & Unikalny identyfikator sprzedawanej nieruchomości \\
+    status & String & Status oferty (aktywna, zakończona, wycofana) \\
+    price & Float & Cena oferty \\
+    negotiable & Boolean & Czy cena jest do negocjacji \\    
+    max\_price & Float & Maksymalna cena do negocjacji \\
+    min\_price & Float & Minimalna cena do negocjacji \\
+    listing\_date & DateTime & Data wystawienia oferty \\
+    expiration\_date & DateTime & Data wygaśnięcia oferty \\
+    preferred\_payment\_method & String & Preferowana metoda płatności (gotówka, kredyt hipoteczny) \\
+    \hline
+    \end{tabularx}
+    \label{tab:sell_offer_details}
+\end{table}
+
+\begin{table}[H]
+    \caption{Format rekordów o typie \textit{oferta wynajmu}}
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|X|}
+    \hline
+    \textbf{Atrybut} & \textbf{Typ} & \textbf{Opis} \\
+    \hline
+    id & String & Unikalny identyfikator oferty wynajmu \\
+    property\_id & String & Unikalny identyfikator wynajmowanej nieruchomości \\
+    status & String & Status oferty (aktywna, zakończona, wycofana) \\
+    price & Float & Cena wynajmu \\
+    additional\_cost & Float & Dodatkowe koszty \\
+    additional\_cost\_description & String & Opis dodatkowych kosztów \\
+    deposit & Float & Wymagana kaucja \\
+    negotiable & Boolean & Czy cena jest do negocjacji \\    
+    max\_price & Float & Maksymalna cena do negocjacji \\
+    min\_price & Float & Minimalna cena do negocjacji \\
+    listing\_date & DateTime & Data wystawienia oferty \\
+    expiration\_date & DateTime & Data wygaśnięcia oferty \\
+    min\_start\_date & DateTime & Minimalna data rozpoczęcia wynajmu \\
+    max\_start\_date & DateTime & Maksymalna data rozpoczęcia wynajmu \\
+    min\_duration & Integer & Minimalny czas wynajmu w miesiącach \\
+    max\_duration & Integer & Maksymalny czas wynajmu w miesiącach \\
+    agreement\_type & String & Rodzaj umowy (najem okazjonalny, najem instytucjonalny) \\
+    rent\_type & String & Rodzaj wynajmu (całkowity, częściowy) \\
+    roommates & Integer & Liczba współlokatorów (obecnie mieszkających) \\
+    roommates\_description & String & Opis współlokatorów (obecnie mieszkających) \\
+    preferred\_tenant & String & Preferowany najemca (student, studentka, para, rodzina, bez dzieci, dowolny) \\
+    animals\_allowed & String & Czy dozwolone są zwierzęta (tak, nie, częściowo) \\
+    animals\_policy & String & Opis polityki dotyczącej zwierząt \\
+    additional\_description & String & Dodatkowy opis oferty \\
+    owner\_type & String & Typ właściciela (osoba prywatna, firma) \\
+    \hline
+    \end{tabularx}
+    \label{tab:rent_offer_details}
+\end{table}
+
+
+
+
