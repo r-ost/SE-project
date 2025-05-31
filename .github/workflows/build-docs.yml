@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Compile LaTeX document
+      - name: Compile opis_projektu document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
@@ -25,7 +25,26 @@ jobs:
             pdflatex -interaction=nonstopmode main.tex
           working_directory: docs/opis_projektu
 
-      - name: Upload PDF
+      - name: Compile raport_koncowy document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          compiler: pdflatex
+          args: "-shell-escape -interaction=nonstopmode"
+          pre_compile: |
+            pdflatex -draftmode -interaction=nonstopmode main.tex
+          post_compile: |
+            pdflatex -interaction=nonstopmode main.tex
+          working_directory: docs/raport_koncowy
+
+      - name: Upload docs/opis_projektu PDF
         uses: actions/upload-artifact@v4
         with:
-          path: docs/main.pdf
+          name: opis_projektu
+          path: docs/opis_projektu/main.pdf
+      
+      - name: Upload docs/raport_koncowy PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: raport_koncowy
+          path: docs/raport_koncowy/main.pdf
