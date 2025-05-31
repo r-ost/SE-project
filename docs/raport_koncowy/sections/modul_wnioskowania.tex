@@ -5,6 +5,62 @@
 
 Moduł wnioskowania systemu ekspertowego jest odpowiedzialny za analizę danych wejściowych i generowanie rekomendacji na podstawie reguł zawartych w bazie wiedzy. W tym module zdefiniowane są reguły, które pozwalają na klasyfikację nieruchomości, ofert sprzedaży i wynajmu oraz określenie ich przydatności dla różnych grup użytkowników. Reguły zostały zdefiniowane w oparciu o wiedzę ekspertów dziedzinowych. Poniżej przedstawiono szczegółową specyfikację reguł wnioskowania.
 
+
+\subsection{Przykład działania modułu wnioskowania – wynajem}
+
+Załóżmy, że użytkownik szuka mieszkania na wynajem, które:
+\begin{itemize}
+    \item jest odpowiednie dla rodziny,
+    \item jest przyjazne zwierzętom,
+    \item jest ekonomiczne,
+    \item jest dostępne od zaraz.
+\end{itemize}
+System ekspertowy analizuje wszystkie oferty i wybiera te, które spełniają wszystkie powyższe kryteria.
+
+\begin{verbatim}
+?- filtruj_wynajem(filtry{
+       dla_rodziny: t,
+       przyjazne_zwierzetom: t,
+       ekonomiczne: t,
+       dostepne_od_zaraz: t
+   }, Nieruchomosc, Oferta).
+Nieruchomosc = n42,
+Oferta = w17 ;
+Nieruchomosc = n88,
+Oferta = w23 ;
+false.
+\end{verbatim}
+
+W powyższym przykładzie system znalazł dwie oferty wynajmu, które są jednocześnie rodzinne, ekonomiczne, przyjazne zwierzętom i dostępne od zaraz.
+
+\subsection{Przykład działania modułu wnioskowania – sprzedaż}
+
+Załóżmy, że użytkownik szuka nieruchomości na sprzedaż, która:
+\begin{itemize}
+    \item jest atrakcyjna inwestycyjnie,
+    \item jest luksusowa,
+    \item jest nowa (wybudowana po 2010 roku),
+    \item znajduje się blisko centrum.
+\end{itemize}
+System ekspertowy analizuje oferty sprzedaży i wybiera te, które spełniają wszystkie powyższe warunki.
+
+\begin{verbatim}
+?- filtruj_sprzedaz(filtry{
+       inwestycyjna: t,
+       luksusowa: t,
+       nowe: t,
+       blisko_centrum: t
+   }, Nieruchomosc, Oferta).
+Nieruchomosc = n105,
+Oferta = o12 ;
+false.
+\end{verbatim}
+
+W tym przypadku system znalazł jedną ofertę sprzedaży, która jest jednocześnie inwestycyjna, luksusowa, nowa i położona blisko centrum miasta.
+
+\subsection{Technologia implementacji modułu wnioskowania}
+
+Moduł wnioskowania został zaimplementowany w języku \textbf{Prolog}, który jest klasycznym narzędziem do tworzenia systemów ekspertowych opartych na regułach. Prolog umożliwia definiowanie faktów i reguł logicznych, a następnie automatyczne wnioskowanie na ich podstawie. Dzięki temu możliwe jest łatwe rozszerzanie bazy wiedzy oraz szybkie dopasowywanie ofert do złożonych kryteriów użytkownika. W projekcie wykorzystano SWI-Prolog jako środowisko uruchomieniowe.
 \subsection{Nieruchomość}
 \begin{enumerate}[label=N\arabic*.]
     \item Mieszkanie jest \textbf{małe}, jeśli ma mniej niż 40 metrów kwadratowych powierzchni.
